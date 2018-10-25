@@ -1,0 +1,7 @@
+AuthName "portal.coinflow.ai statistics"
+AuthType Basic
+AuthUserFile /home/portal/.stats-htpasswd
+require valid-user
+<Files .stats-htpasswd>
+deny from all
+</Files>

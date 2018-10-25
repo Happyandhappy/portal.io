@@ -1,0 +1,170 @@
+# Webalizer V2.23-08 Incremental Data - 09/17/2018 11:44:00
+2018 9 17 11 44 0
+24 21 1 20 4 1 747895 4 1 0
+1 24 24 17 17
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+24 21 747895 1 4 1
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+24 21 747895 4
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0 0 0 0
+0
+0
+0
+21
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+1
+0
+0
+0
+0
+2
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+# -urls- 
+/css/font-awesome.min.css
+0 1 30008432 31000 0 0
+/js/jquery.min.js
+0 1 30008992 86927 0 0
+/js/coiflow.js
+0 1 30009104 1377 0 0
+/images/favicon.png
+1 1 30010752 8932 0 0
+/fonts/fontawesome-webfont.woff
+0 1 30010624 98024 0 0
+/js/bootstrap.min.js
+0 1 30008768 48944 0 0
+/images/curve_bottom2.png
+1 1 30010000 1761 0 0
+/images/logo.png
+1 1 30009216 15762 0 0
+/fonts/OpenSans-SemiBold.woff2
+0 1 30010240 14548 0 0
+/fonts/OpenSans-Regular.woff
+0 1 30010368 112368 0 0
+/images/bg_after.png
+1 1 30009888 3938 0 0
+/css/style.css
+0 1 30008656 21799 0 0
+/css/bootstrap.min.css
+0 1 30009440 144877 0 0
+/js/pie-chart.js
+0 1 30008880 5530 0 0
+/images/main_chart.jpg
+1 1 30009328 47402 0 0
+/
+0 2 48 21874 1 0
+/images/curve_top.png
+1 1 30010128 1333 0 0
+/images/re_bg_menu.png
+1 1 30009552 977 0 0
+/images/bg_header-re.png
+1 1 30009760 1034 0 0
+/fonts/URWClassico-Reg.woff
+0 1 30010496 79068 0 0
+# End Of Table - urls
+# -sites- (monthly)
+c58-111-131-9.artrmn3.nsw.optusnet.com.au
+0 24 21 747895 1 1537184640
+/
+# End Of Table - sites (monthly)
+# -sites- (daily)
+c58-111-131-9.artrmn3.nsw.optusnet.com.au
+0 24 21 747895 1 1537184640
+/
+# End Of Table - sites (daily)
+# -referrers- 
+http://portal.coinflow.ai/css/style.css
+0 9
+http://portal.coinflow.ai/clients/login
+0 1
+- (Direct Request)
+0 2
+http://portal.coinflow.ai/
+0 12
+# End Of Table - referrers
+# -agents- 
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36
+0 24
+# End Of Table - agents
+# -search strings- 
+# End Of Table - search strings
+# -usernames- 
+# End Of Table - usernames

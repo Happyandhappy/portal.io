@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Enter coin - CoiFlow</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/pie-chart.js"></script>
+  <script src="js/coiflow.js"></script>
+</head>
+<body class="enter-coin">
+	<section id="enter_coin">
+		<div class="container">
+			<div class="row head">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8 text-center mb-40">
+					<div class="logo_section"><img class="logo_2" src="images/logo_entercoin.png" alt="" /> Enter coins</div>
+					<p>Lorem ipsum dolor sit amet, no atomorum periculis sea, ad mazim explicari pri. Te nam repudiare vituperatoribus clita vocent eum, duo in aperiam volutpat.</p>
+				</div>
+				<div class="col-sm-2"></div>
+				<div class="col-sm-12">
+					<div class="coinenter_btn text-center">
+						<!--
+						<button type="button" class="btn btn-light">Manual</button>
+						<button type="button" class="btn btn-white">CSV</button>
+						-->
+						
+						
+						<ul class="nav nav-pills" id="pills-tab" role="tablist">
+						  <li class="nav-item">
+						    <a class="nav-link " id="pills-manual-tab" data-toggle="pill" href="#pills-manual" role="tab" aria-controls="pills-manual" aria-selected="false">Manual</a>
+						  </li><li class="nav-item">
+						    <a class="nav-link active" id="pills-csv-tab" data-toggle="pill" href="#pills-csv" role="tab" aria-controls="pills-csv"  aria-selected="true">CSV</a>
+						  </li>
+						</ul>
+						<div class="tab-content" id="pills-tabContent">
+						  <div class="tab-pane fade" id="pills-manual" role="tabpanel" aria-labelledby="pills-manual-tab">
+						  		<div class="row">
+									<div class="col-sm-12">
+										<div class="tab">
+											<ul class="nav nav-tabs text-center">
+										  	  <li><a class="active" data-toggle="tab" href="#menu1">Manual upload</a></li>
+											</ul>
+						  					<div class="tab-content">
+						  						<form class="upload">
+													<input type="file" name="file" id="file" class="inputfile" />
+													<label for="file">Choose a file</label>
+													<button>Upload</button>
+												</form>
+						  						<p>Lorem ipsum dolor sit amet, no atomorum periculis sea, ad mazim explicari pri. Te nam repudiare vituperatoribus clita vocent eum, duo in aperiam volutpat.</p>
+						  					</div>
+										</div>
+									</div>
+								</div>
+						  </div>
+						  <div class="tab-pane fade show active" id="pills-csv" role="tabpanel" aria-labelledby="pills-csv-tab">
+						  		<div class="row">
+									<div class="col-sm-12">
+										<div class="tab">
+											<ul class="nav nav-tabs text-center">
+											  <li><a data-toggle="tab" href="#home1">Bulk CSV</a></li>
+											  <li><a class="active" data-toggle="tab" href="#menu1">Exchange CSV </a></li>
+											  <li><a data-toggle="tab" href="#menu2">Exchange API </a></li>
+											  <li><a data-toggle="tab" href="#menu3">Wallet </a></li>
+											</ul>
+
+											<div class="tab-content">
+											  <div id="home1" class="tab-pane fade">
+												<form class="upload">
+													<input type="file" name="file" id="file" class="inputfile" />
+													<label for="file">Choose file</label>
+													<button>Upload</button>
+												</form>
+												<p>Lorem ipsum dolor sit amet, no atomorum periculis sea, ad mazim explicari pri. Te nam repudiare vituperatoribus clita vocent eum, duo in aperiam volutpat.</p>
+											  </div>
+											  <div id="menu1" class="tab-pane in active">
+												<form class="upload">
+													<input type="file" name="file" id="file" class="inputfile" />
+													<label for="file">Choose a file</label>
+													<button>Upload</button>
+												</form>
+												<p>Lorem ipsum dolor sit amet, no atomorum periculis sea, ad mazim explicari pri. Te nam repudiare vituperatoribus clita vocent eum, duo in aperiam volutpat.</p>
+												</div>
+											  <div id="menu2" class="tab-pane fade">
+												<form class="upload">
+													<input type="file" name="file" id="file" class="inputfile" />
+													<label for="file">Choose a file</label>
+													<button>Upload</button>
+												</form>
+												<p>Lorem ipsum dolor sit amet, no atomorum periculis sea, ad mazim explicari pri. Te nam repudiare vituperatoribus clita vocent eum, duo in aperiam volutpat.</p>
+											  </div>
+											  <div id="menu3" class="tab-pane fade">
+												<form class="upload">
+													<input type="file" name="file" id="file" class="inputfile" />
+													<label for="file">Choose a file</label>
+													<button>Upload</button>
+												</form>
+												<p>Lorem ipsum dolor sit amet, no atomorum periculis sea, ad mazim explicari pri. Te nam repudiare vituperatoribus clita vocent eum, duo in aperiam volutpat.</p>
+											  </div>
+											</div>
+										</div>
+									</div>
+								</div>
+						  </div>
+						</div>
+						
+						
+						
+						
+						
+						
+						
+						
+					</div>
+				</div>
+			</div>
+			<!--
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="tab">
+						<ul class="nav nav-tabs text-center">
+						  <li><a data-toggle="tab" href="#home1">Bulk CSV</a></li>
+						  <li><a class="active" data-toggle="tab" href="#menu1">Exchange CSV </a></li>
+						  <li><a data-toggle="tab" href="#menu2">Exchange API </a></li>
+						  <li><a data-toggle="tab" href="#menu3">Wallet </a></li>
+						</ul>
+
+						<div class="tab-content">
+						  <div id="home1" class="tab-pane fade">
+							<form class="upload">
+								<input type="file" name="file" id="file" class="inputfile" />
+								<label for="file">Choose file</label>
+								<button>Upload</button>
+							</form>
+							<p>Lorem ipsum dolor sit amet, no atomorum periculis sea, ad mazim explicari pri. Te nam repudiare vituperatoribus clita vocent eum, duo in aperiam volutpat.</p>
+						  </div>
+						  <div id="menu1" class="tab-pane in active">
+							<form class="upload">
+								<input type="file" name="file" id="file" class="inputfile" />
+								<label for="file">Choose a file</label>
+								<button>Upload</button>
+							</form>
+							<p>Lorem ipsum dolor sit amet, no atomorum periculis sea, ad mazim explicari pri. Te nam repudiare vituperatoribus clita vocent eum, duo in aperiam volutpat.</p>
+							</div>
+						  <div id="menu2" class="tab-pane fade">
+							<form class="upload">
+								<input type="file" name="file" id="file" class="inputfile" />
+								<label for="file">Choose a file</label>
+								<button>Upload</button>
+							</form>
+							<p>Lorem ipsum dolor sit amet, no atomorum periculis sea, ad mazim explicari pri. Te nam repudiare vituperatoribus clita vocent eum, duo in aperiam volutpat.</p>
+						  </div>
+						  <div id="menu3" class="tab-pane fade">
+							<form class="upload">
+								<input type="file" name="file" id="file" class="inputfile" />
+								<label for="file">Choose a file</label>
+								<button>Upload</button>
+							</form>
+							<p>Lorem ipsum dolor sit amet, no atomorum periculis sea, ad mazim explicari pri. Te nam repudiare vituperatoribus clita vocent eum, duo in aperiam volutpat.</p>
+						  </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			--> 
+			<div class="content">
+			</div>
+		</div>
+	</section><!--end chart_trend-->
+
+	<section id="chart_trend">
+		<div class="container heade_section">
+			<div class="row head_title">
+				<div class="col-sm-12">
+						<div class="title">
+							<h2> Charts</h2>
+							<div class="right_title">
+								Start now.&nbsp;&nbsp;<button class="sign_in">Sign up</button>
+							</div>
+						</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+					<div class="desc text-center">
+						<p>All current and historical prices for 5,417 existing currencies provides you with a comprehensive insight onto the patterns of the cryptocurrency landscape.</p>
+					</div>
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+		</div>
+		<div class="container"><!--show --> 
+			<div class="chart">
+				<div class="head">
+					<div class="row full-tab">
+						<div class="col-sm-3 item">
+							<span class="title_chart">Bitcoin price in AUD</span>
+						</div>
+						<div class="col-sm-9 text-right item">
+							<form class="select_tag" action="" name="" method="">
+								<div class="select_control">
+								<i class="fa fa-caret-down"></i>
+								  <select class="custom-select" id="">
+									<option selected>Line chart (BTC and AUD)</option>
+									<option value="1">Line chart (BTC and AUD)</option>
+									<option value="2">Line chart (BTC and AUD)</option>
+									<option value="3">Line chart (BTC and AUD)</option>
+								  </select>
+								</div>
+								<div class="select_control">
+								<i class="fa fa-caret-down"></i>
+								  <select class="custom-select" id="">
+									<option selected>Hide my trades</option>
+									<option value="1">Hide my trades</option>
+									<option value="2">Hide my trades</option>
+									<option value="3">Hide my trades</option>
+								  </select>
+								 </div>
+								<div class="select_control">
+								<i class="fa fa-caret-down"></i>
+								  <select class="custom-select" id="">
+									<option selected>Fast (low details)</option>
+									<option value="1">Fast (low details)</option>
+									<option value="2">Fast (low details)</option>
+									<option value="3">Fast (low details)</option>
+								  </select>
+								 </div>
+								<div class="select_control">
+								<i class="fa fa-caret-down"></i>
+								  <select class="custom-select" id="">
+									<option selected>All data</option>
+									<option value="1">All data</option>
+									<option value="2">All data</option>
+									<option value="3">All data</option>
+								  </select>
+								 </div>
+							</form>
+							<button class="toggle_btn btn btn-default tb-cell" type="button" data-toggle="collapse" data-target="#bicoin_chart" aria-expanded="true" aria-controls="bicoin_chart">
+								<span class="expend">EXPAND</span>
+								<span class="collapse">COLLAPSE</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="content">
+					<div class="collapse show" id="bicoin_chart">
+					  <div class="card card-body">
+						<img src="images/chart.jpg" alt="" />
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!--end chart_trend-->
+
+	<section id="tax_report">
+		<div class="container heade_section">
+			<div class="row head_title">
+				<div class="col-sm-12">
+						<div class="title">
+							<h2> Tax reports</h2>
+							<div class="right_title">
+								Prepare yourself for tax time.&nbsp;&nbsp;<button class="sign_in">Sign up</button>
+							</div>
+						</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+					<div class="desc text-center">
+						<p>All current and historical prices for 5,417 existing currencies provides you with a comprehensive insight onto the patterns of the cryptocurrency landscape.</p>
+					</div>
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+		</div>
+		<div class="container"><!--hide --> 
+			<div class="chart">
+				<div class="head">
+					<div class="row">
+						<div class="col-sm-12 col-md-12 col-lg-3">
+							<span class="title_chart">Generate report</span>
+						</div>
+						<div class="col-sm-12 col-md-12 col-lg-9 text-right text-md">
+							<form class="select_tag" action="" name="" method="">
+							<div class="select_control search">
+									<input class=" form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+								</div>
+								<div class="select_control">
+									<i class="fa fa-caret-down"></i>
+									<select class="custom-select" id="">
+										<option selected>Options</option>
+										<option value="1">Options 1</option>
+										<option value="2">Options 2</option>
+									</select>
+								</div>
+								<div class="select_control">
+									<i class="fa fa-caret-down"></i>
+									<select class="custom-select" id="">
+										<option selected>Export</option>
+										<option value="1">Export json</option>
+										<option value="2">Export csv</option>
+									</select>
+								</div>
+							</form>
+							<button class="toggle_btn btn btn-default tb-cell" type="button" data-toggle="collapse" data-target="#generate" aria-expanded="false" aria-controls="generate">
+								<span class="expend">EXPAND</span>
+								<span class="collapse">COLLAPSE</span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="content">
+					<div class="collapse hide" id="generate">
+					  <div class="card card-body">
+						<img src="images/chart.jpg" alt="" />
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!--end tax_report-->
+
+	<footer>
+	<div class="topbar">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 after_right">
+					<a href="#top" class="backto_top"><i class="fa fa-angle-double-up"></i>&nbsp; Back to top</a>
+						<span class="after_content"></span>
+						</div>
+					</div>
+					<div class="col-md-4 right"></div>
+				</div>
+			</div>
+		</div>
+		<div class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-md-12 col-lg-4">
+						<div class="logo">
+							<a href="#"><img src="images/logo.png" alt="coin flow" /></a>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-4">
+						<div class="exchange tb">
+							<span class="title tb-cell">
+								Summaries
+							</span>
+							<span class="number tb-cell">
+								<input name="" value="1">
+								<span class="cur">BTC</span>
+							</span>
+							<span class="cacul_wrap tb-cell"><span class="cacul"> = </span></span>
+							<span class="result tb-cell"> $6.315,75
+							</span>
+						</div>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-4">
+						
+						<div class="pie">
+							<div class="pie-item">
+								<div data-type="%" data-border="#4583de" data-percent-border="#40ccc5" class="pie-chart pie-title-center" data-percent="11">
+									<div class="incicle">+<span class="pie-value"></span><span class="type_cur">Coins</span>
+									</div>
+								</div>
+								<span class="pie_va_cur">0.7 BTC</span>
+							</div>
+							<div class="pie-item">
+								<div data-type="%" data-border="#4583de" data-percent-border="#ffb8c1" class="pie-chart pie-title-center" data-percent="21">
+								<div class="incicle">+ <span class="pie-value"></span> <span class="type_cur">Currencies</span></div></div>
+							<span class="pie_va_cur">AUD$ 8,500</span>
+							</div>
+							<div class="pie-item">
+								<div data-type="" data-border="#4583de" data-percent-border="#d982b0" class="pie-chart pie-title-center" data-percent="67"> <div class="incicle"><span class="pie-value"></span> <span class="type_cur">Trades</span></div></div>
+							<span class="pie_va_cur">7 Coins</span>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div><!--end header-->
+		
+		<div class="nav">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-lg-7 after_right">
+						<span class="after_content footer_after"></span>
+						<nav class="menu">
+							<a class="nav-link active" href="#dashboard">Dashboard</a>
+							<a class="nav-link" href="#reporting">Reporting</a>
+							<a class="nav-link" href="#enter_coin">Enter Coins</a>
+							<a class="nav-link" href="#chart_trend">Chart & Trends</a>
+							<a class="nav-link" href="#tax_report">Tax-Report</a>
+							<a class="nav-link" href="#">Customer Support</a>
+						</nav>
+					</div>
+					<div class="col-md-12 col-sm-12 col-lg-5">
+						<div class="account tb">
+							<span class="tb-cell">
+								Free membership
+							</span>
+							<button class="sign_in tb-cell">Sign in</button>
+							<button class="new_acc tb-cell">Create an account &nbsp; <i class="fa fa-angle-double-right"></i>
+						</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-md-12 col-lg-9">
+						<nav class="menu_cop">
+							<a href="#">Terms of Service</a>
+							<a href="#">Privacy Policy</a>
+							<a href="#">Contact & FAQ</a>
+							<a href="#">Documentation</a>
+								  
+						</nav>
+						<p class="copyright_p">Copyright © 2018 Coinflow</p>
+					</div>
+					<div class="col-sm-12 col-md-12 col-lg-3">
+						<div class="socials footer_social">
+							<ul>
+								<li  class="facebook"> <a href=""><i class="fa fa-facebook-f"></i></a></li>
+								<li  class="twitter"> <a href=""><i class="fa fa-twitter"></i></a></li>
+								<li  class="instagram"> <a href=""><i class="fa fa-instagram"></i></a></li>
+								<li  class="google"> <a href=""><i class="fa fa-google-plus"></i></a></li>
+								<li  class="youtube"> <a href=""><i class="fa fa-youtube"></i></a></li>
+								<li  class="linkedin"> <a href=""><i class="fa fa-linkedin"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
