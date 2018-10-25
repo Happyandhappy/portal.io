@@ -233,7 +233,7 @@ class App
             $this->ci->db->where('name', $name);
             $row = $this->ci->db->get('tbloptions')->row();
             if ($row) {
-                $val = $row->value;
+                $val = $row->value;                
             }
         } else {
             $val = $this->options[$name];
