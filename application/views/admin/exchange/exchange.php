@@ -6,52 +6,16 @@
 				<div class="panel_s">
 					<div class="panel-body">
 						<div class="_buttons">
-							<a href="#__todo" data-toggle="modal" class="btn btn-info">
-								<?php echo _l('new_todo'); ?>
+							<a href="#" class="btn btn-info pull-left" onclick="add_exchange(); return false;" data-toggle="modal" data-target="#exchange_item_modal">
+								<?php echo _l('new_exchange_name'); ?>									
 							</a>
 						</div>
 						<div class="clearfix"></div>
+
 						<hr class="hr-panel-heading" />
 						<div class="row">
-							<div class="col-md-6">
-								<div class="panel_s events animated fadeIn">
-									<div class="panel-body todo-body">
-										<h4 class="todo-title warning-bg"><i class="fa fa-warning"></i>
-											<?php echo _l('unfinished_todos_title'); ?></h4>
-											<ul class="list-unstyled todo unfinished-todos todos-sortable">
-												<li class="padding no-todos hide ui-state-disabled">
-													<?php echo _l('no_unfinished_todos_found'); ?>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-12 text-center padding">
-											<a href="#" class="btn btn-default text-center unfinished-loader"><?php echo _l('load_more'); ?></a>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="panel_s animated fadeIn">
-										<div class="panel-body todo-body">
-											<h4 class="todo-title info-bg"><i class="fa fa-check"></i>
-												<?php echo _l('finished_todos_title'); ?></h4>
-												<ul class="list-unstyled todo finished-todos todos-sortable">
-													<li class="padding no-todos hide ui-state-disabled">
-														<?php echo _l('no_finished_todos_found'); ?>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-12 text-center padding">
-												<a href="#" class="btn btn-default text-center finished-loader">
-													<?php echo _l('load_more'); ?>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
+							<div class="col-md-12">								
+								<?php $this->load->view('admin/exchange/_table', array('tableData'=>$tableData)); ?>
 							</div>
 						</div>
 					</div>
@@ -60,3 +24,44 @@
 		</div>
 	</div>
 </div>
+<?php $this->load->view('admin/exchange/modal'); ?>
+<?php init_tail(); ?>
+
+<script type="text/javascript">
+  $(document).ready(()=>{
+      $(".edit-title").addClass('hide');
+      $(".add-title").removeClass('hide');
+      $(document).ready(function() {
+    	 $('#table').DataTable();
+    	 $('#table_wrapper').removeClass('table-loading');
+	  });	  
+  });
+
+ var add_exchange = function(){
+      $(".edit-title").addClass('hide');
+      $(".add-title").removeClass('hide');
+      $("#exchange_form").attr('action','<?php echo admin_url('exchange/add'); ?>');
+ }
+
+ var edit_exchange = function(id){
+      $(".add-title").addClass('hide');
+      $(".edit-title").removeClass('hide');
+      $("#exchange_form").attr('action','<?php echo admin_url('exchange/edit'); ?>' + "/" + id);
+      $.ajax({
+      	url : "<?php echo admin_url('exchange/get'); ?>" + "/" + id,
+      	data : {
+      		id : id
+      	},
+      	success : function(res){
+      		console.log(res);
+      		var data = JSON.parse(res);
+      		if (data.length > 0){
+      			$('#itemid').val(data[0]['id']);
+      			$('#name').val(data[0]['name']);
+      			$('#description').val(data[0]['description']);
+      		}
+      	}
+      });
+ }
+
+</script>

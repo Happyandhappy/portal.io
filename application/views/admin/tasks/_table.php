@@ -29,5 +29,6 @@ $table_data = do_action('tasks_table_columns',$table_data);
 
 array_push($table_data, _l('options'));
 
+
 render_datatable($table_data, 'tasks');
 ?>
