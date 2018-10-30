@@ -1,4 +1,4 @@
- ul,* {
+ul,* {
 	margin:0px;
 	padding:0px;
 }
@@ -91,15 +91,6 @@ body{
 }
 p{ color:#a3a3a3;line-height: 1.6;
     font-size: 14px;}
-hr { 
-    display: block;
-    margin-top: 7px;
-    margin-bottom: 7px;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
-}
 .topbar{
 	background:#203f8b;
 }
@@ -148,114 +139,18 @@ select:focus,select:active{
     padding: 13px 9px;
 	color: #a1b1d3;
 }
-
-.dropbtn {
-	background:url('../images/re_bg_menu.png') repeat-x;
-	background-position: top center;
-    border: none;
-    display: inline-block;
-    font-size: 14px;
-    padding: 1px 9px;
-	color: #a1b1d3;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-    
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    font-size: 14px;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content2 {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 167px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    font-size: 14px;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 10px 16px;
-    text-decoration: none;
-    display: block;
-    
-}
-
-/* Links inside the dropdown */
-.dropdown-content2 a {
-    color: black;
-    padding: 10px 16px;
-    text-decoration: none;
-    display: block;
-    
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Change color of dropdown links on hover */
-.dropdown-content2 a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content2 {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {color: #fff;}
-
-
-
-
-
 .nav .after_content{
-	background: url(../images/topbar_right_bg.png);
-}
-.nav .after_content2{
-	background: url(../images/test7a.png);
-    background-size: auto;
-        padding-right: 866px;
-    background-position: 75px;
-    
+	background:#fff;
 }
 .nav .after_content:after{
-	background-color:#000000;
+	background-color:#ffffff;
 	/*transform: rotate(-180deg);
 	background: url(../images/bg_after_2.png) no-repeat;
 	*/
 	background: url(../images/curve_bottom2.png) no-repeat;
 	background-size: contain;
     margin-left: -20px;
-    margin-bottom: 1px;
 }
-.nav .after_content2:after{
-	background-color:#f6f6f6;
-	/*transform: rotate(-180deg);
-	background: url(../images/bg_after_2.png) no-repeat;
-	*/
-	background: url(../images/curve_bottom6.png) no-repeat;
-	background-size: contain;
-    margin-left: -20px;
-    margin-bottom: px;
-}
-
 .home{
 	text-align:center;
 }
@@ -280,11 +175,6 @@ button[aria-expanded="false"] .collapse{
 	float:right;
 }
 .nav .row .col-lg-5 {
-	position: absolute;
-    right: 0px;
-    top: 0px;
-}
-.nav .row .col-lgb-5 {
 	position: absolute;
     right: 0px;
     top: 0px;
@@ -325,15 +215,6 @@ button[aria-expanded="false"] .collapse{
     bottom: 0px;
     background: #174db8;
 }
-
-.after_content2{
-	    position: absolute;
-    content: "";
-    height: 30px;
-    left: 100%;
-    bottom: 0px;
-    background: #174db8;
-}
 header .nav{
 	    border-top: 1px solid #123f98;
 }
@@ -348,21 +229,9 @@ header .nav{
     background-color: #203f8b;
     background-position: bottom right;
 }
-.after_content2:after{
-	position: absolute;
-    content: "";
-    height: 31px;
-    width: 99px;
-    bottom: 0px;
-	background:url('../images/bg_after.png') no-repeat;
-    background-size: contain;
-    background-color: #203f8b;
-    background-position: bottom right;
-}
 .nav{
 	background:url('../images/re_bg_menu.png') repeat-x;
 	background-position: top center;
-    
 }
 .exchange .tb-cell{
 	vertical-align:middle;
@@ -400,9 +269,7 @@ header .nav{
 	color: #fff;
 }
 .exchange .result{
-	line-height: 30px;
-    width: 120px;
-    padding-left: 10px;
+	padding-left: 10px;
 	color: #fff;
 }
 .exchange{
@@ -478,35 +345,6 @@ button.sign_in{
     border: none;
     margin-left: 15px;
 }
-.execute button{
-	background: linear-gradient(to right, #81D8AA, #B1FBBF);
-    padding: 10px 15px;
-    border-radius: 7px;
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    border: none;
-    margin-left: 15px;
-    position:relative;
-    left: 640px;
-    bottom: 20px;
-}
-.execute{
-	color: #7f7f7f;
-}
-.execute button.exe{
-	color:#fff;
-}
-.execute button.sign_in{
-	background: #ececec;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    color: #000000;  
-font-weight:600;	
-}
-
 #reporting .head_section{
 	    margin-bottom: 0px;
 }
@@ -531,12 +369,9 @@ font-weight:600;
     display: block;
     background: linear-gradient(to right, #5d9ee7, #7fc2f4);
     border-radius: 7px;
-    position: relative;
-    left: -160px;
-    top: 30px;
 }
 #dashboard{
-	background:url('../images/bg_dash.png') top center no-repeat;
+	/*background:url('../images/bg_dash.png') top center no-repeat;*/
 }
 .chart .row{
 	    align-items: center;
@@ -544,11 +379,9 @@ font-weight:600;
 .head_section{
 	padding-top: 50px;
     padding-bottom: 30px;
-    background: #f6f6f6;
 }
 .head_title{
 	margin-bottom: 10px;
-    background: #f6f6f6;
 }
 .eye{
 	float:right;
@@ -703,16 +536,16 @@ position: relative;
 }
 #enter_coin{
 	background:url('../images/bg_entercoin.png') no-repeat;
-	background-position: top -44px center;
+	background-position: top center;
     background-size: cover;
 
 }
 .tab{
-	background:#fbfbfb;    
+	background:#ffffff;    
 	border-radius: 7px;
 	-webkit-border-radius: 7px;
 	-moz-border-radius: 7px;
-        border: 3px solid #efecec;
+        border: 1px solid #efecec;
 }
 input[type="file"]{
 	display: inline-block;
@@ -774,12 +607,6 @@ input[type="file"]{
 }
 #pills-tabContent .tab-content{padding-left:20px;padding-right:20px;color:#afafaf}
 .title_chart{
-    color: #000000;
-    font-family: ClassicoURWTOT-Medium;
-    font-weight: normal;
-    font-size: 17px;
-}
-.title_chart2{
     color: #000000;
     font-family: ClassicoURWTOT-Medium;
     font-weight: normal;
@@ -870,8 +697,6 @@ input[type="file"]{
 }
 #chart_trend{
 	padding-top:70px;
-    background:#f6f6f6;
-    padding-bottom: 15px;
 }
 .heade_section{
 	margin-bottom:40px;
@@ -881,7 +706,6 @@ input[type="file"]{
 }
 #reporting{
 	padding-bottom: 15px;
-    background:#f6f6f6;
 }
 .up{
 	color:#82bce8;
@@ -997,8 +821,7 @@ footer .footer_after:after{
 	top:10px;
 }
 .copyright{
-	    border-top: 70px;
-        background-color: #F7F7F7;
+	    margin-top: 30px;
 }
 .menu_cop a:last-child:after{
 	display:none;
@@ -1085,7 +908,7 @@ footer .footer_after:after{
 	display: block;
     text-align: center;
     color: #fff;
-	font-size: 14px;
+	font-size: 12px;
 }
 footer .nav{
 	border-top: 1px solid #123f98;
@@ -1098,13 +921,6 @@ footer{
 		width:100%;
 		max-width: 100%;
 		    text-align: center;
-        background:#f6f6f6;
-	}
-    	.nav .row .col-mdb-12{
-		width:100%;
-		max-width: 100%;
-		    text-align: center;
-        background:#f6f6f6;
 	}
 	.nav{
 		background-color:#1f489f;
@@ -1114,19 +930,12 @@ footer{
 	}
 	.nav .after_content{
 		width:auto !important;
-        background:#f6f6f6;
 	}
 	.nav .after_content:after{
 		display:none;
 	}
 	.nav .row .col-lg-5{
 		position:relative;
-        background:#ececec;
-        
-	}
-	.nav .row .col-lgb-5{
-		position:relative;
-        background:#ececec;
 	}
 	.account{    color: #ececec;
 		float:none;
@@ -1169,7 +978,6 @@ button:hover{
 	.after_content{
 		display:none;
 	}
-    
 	.exchange{
 		    margin: 10px auto 20px
 	}
@@ -1243,18 +1051,6 @@ footer .topbar .after_right{
 		display:block
 	}
 }
-@media (max-width: 450px){
-	.execute .tb-cell{
-		display: inline-block;
-	}
-	.execute .exe{
-		display: block;
-		margin: auto;    margin-top: 10px;
-	}
-	.execute{
-		display:block
-	}
-}
 @media (max-width: 620px){
 	.title_of {    padding-left: 30px;}
 	.title_of img{
@@ -1302,18 +1098,15 @@ footer .topbar .after_right{
 .expend:hover {
     background: #e1f8c5;
 }
-.enter-coin #enter_coin{margin-top:-1px} 
+.enter-coin #enter_coin{margin-top:0} 
 #pills-tab{
 	display:block;
 	text-align:center;
 	background-color: transparent!important;
 	background-image:none!important;
-    font-size: 0px;
 }
-#enter_coin #pills-tab li{
-    width:90px;font-weight:bold;
-    font-family:OpenSans-SemiBold;
-    font-size: 14px;
+#enter_coin #pills-tab li{width:90px;font-weight:bold;
+font-family:OpenSans-SemiBold;
 }
 #enter_coin #pills-tab li a{
 	    height: 44px;
@@ -1344,12 +1137,7 @@ li #pills-csv-tab{
 	height: 45px;
     width: 120px;
 }
-.nav .after_content2:after{
-	height: 45px;
-    width: 120px;
-}
 .nav .after_content{height: 44px;}
-.nav .after_content2{height: 44px;}
 footer .nav .after_content{height: 45px;}
 footer .after_content:after{
 	height: 31px;
@@ -1358,11 +1146,20 @@ footer .after_content:after{
 	background-repeat: no-repeat;
 }
 
-footer .after_content2:after{
-	height: 31px;
-	width: 114px;
-	background-image: url('../images/curve_top.png');
-	background-repeat: no-repeat;
+span.header-menu-left {
+	/*border-right: 2px solid white;*/
+	color: #dcdcdc;
+    padding-right: 10px;
+}
+span.header-menu-left:hover {
+	color: white;
+}
+span.header-menu-right {
+	color: #dcdcdc;
+    padding-left: 10px;
+}
+span.header-menu-right:hover {
+	color: white;
 }
 
 

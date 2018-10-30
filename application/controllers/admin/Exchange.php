@@ -4,7 +4,7 @@
 	/**
 	 * 
 	 */
-	class Exchange extends Admin_Controller
+	class Exchange extends Admin_controller
 	{
 		
 		function __construct()

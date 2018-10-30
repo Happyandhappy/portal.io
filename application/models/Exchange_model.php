@@ -63,11 +63,18 @@ class Exchange_model extends CRM_Model
     // add new record in exchange_list table
     public function add($name, $description){
         if (!isset($name) || !isset($description)) return false;
+        $this->db->select('name');
+        $this->db->where('name', $name);
+        $result = $this->db->get('exchange_list');
+        if($result->num_rows() > 0) {
+            return false;
+        }
+
         $data = array(
             "name" => $name,
             "createdAt" => date('Y-m-d'),
             "description" => $description
-        );
+        );            
 
         $this->db->insert('exchange_list', $data);
 

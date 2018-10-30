@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed');
 
 spl_autoload_register(function ($class) {
-    if (strpos($class, 'CRM_') !== 0) {
+    if (strpos($class, 'CRM_') !== 0 || strpos($class, 'Admin_') !== 0) {
         @include_once(APPPATH . 'core/'. $class . '.php');
     }
 });

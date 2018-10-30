@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+
 class Expenses extends Admin_controller
 {
     public function __construct()

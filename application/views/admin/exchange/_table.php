@@ -1,5 +1,5 @@
 <div class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-	<table class="table table-exchange dataTable no-footer dtr-inline" id="table">
+	<table class="table table-exchange dataTable no-footer dtr-inline hide" id="table">
 		<thead>
 			<tr role="row">
 				<th>#</th>

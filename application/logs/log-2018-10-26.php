@@ -2381,3 +2381,334 @@ ERROR - 2018-10-26 15:39:17 --> Severity: Notice --> Undefined property: stdClas
 ERROR - 2018-10-26 15:39:17 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
 ERROR - 2018-10-26 15:39:17 --> Could not find the language line "exchange"
 ERROR - 2018-10-26 15:39:17 --> Could not find the language line "new_exchange_name"
+ERROR - 2018-10-26 15:41:20 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:41:20 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:41:20 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:41:20 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:41:20 --> Could not find the language line "new_exchange_name"
+ERROR - 2018-10-26 15:41:21 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:41:21 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:41:21 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:41:21 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:41:21 --> Could not find the language line "new_exchange_name"
+ERROR - 2018-10-26 15:41:23 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:41:23 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:41:23 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:41:23 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:41:23 --> Could not find the language line "new_exchange_name"
+ERROR - 2018-10-26 15:41:36 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:41:36 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:41:36 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:41:36 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:41:36 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:43:05 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:43:05 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:43:05 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:43:05 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:43:05 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:43:07 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:43:07 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:43:07 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:43:07 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:43:07 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:43:13 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:43:13 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:43:13 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:43:13 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 17:43:13 --> 404 Page Not Found: Assets/plugins
+ERROR - 2018-10-26 15:43:17 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:43:17 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:43:17 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:43:17 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:43:17 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:43:20 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:43:20 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:43:20 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:43:20 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:43:20 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:44:11 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:44:11 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:11 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:11 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:44:11 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:44:16 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:44:16 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:16 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:16 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:44:19 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:44:19 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:19 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:19 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:44:21 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:44:21 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:21 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:21 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:44:24 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:44:24 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:24 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:24 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:44:24 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:44:27 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:44:27 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:27 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:27 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:44:27 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:44:30 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:44:30 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:30 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:30 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:44:30 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:44:32 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:44:32 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:32 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:32 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:44:32 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:44:34 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:44:34 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:35 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:35 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:44:35 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:44:37 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:44:37 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:37 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:37 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:44:37 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:44:39 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:44:39 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:39 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:44:39 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:44:39 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:45:11 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:45:11 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:45:11 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:45:11 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:45:11 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:46:11 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:46:11 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:46:11 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:46:11 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:46:11 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:46:14 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:46:14 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:46:14 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:46:14 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:46:14 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:46:17 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:46:17 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:46:17 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:46:17 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:46:17 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:46:22 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:46:22 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:46:22 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:46:22 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:46:22 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:46:25 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:46:25 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:46:25 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:46:25 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:46:25 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:46:28 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:46:28 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:46:28 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:46:28 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:46:28 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:46:53 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:46:53 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:46:53 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:46:53 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:46:53 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:47:14 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:47:14 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:47:14 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:47:14 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:47:14 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:47:17 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:47:17 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:47:17 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:47:17 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:47:17 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:47:27 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:47:27 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:47:27 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:47:27 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:47:28 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:47:28 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:47:28 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:47:28 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:47:28 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:53:09 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:53:09 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:53:09 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:53:09 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:53:09 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:53:09 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:53:09 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:53:09 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:53:09 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 15:54:40 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:54:40 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:54:40 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:54:40 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:54:41 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 15:54:41 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:54:41 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 15:54:41 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 15:54:41 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 16:12:25 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 16:12:25 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:12:25 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:12:25 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 16:20:14 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 16:20:14 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:20:14 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:20:14 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 16:20:14 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 16:27:47 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 16:27:47 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:27:47 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:27:47 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 16:32:24 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 16:32:24 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:32:24 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:32:24 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 16:32:24 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 16:32:26 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 16:32:26 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:32:26 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:32:26 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 16:34:58 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 16:34:58 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:34:58 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:34:58 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 16:34:58 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 16:39:27 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 16:39:27 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:39:27 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:39:27 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 16:39:27 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 16:39:37 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 16:39:37 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:39:37 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:39:37 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 16:39:40 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 16:39:40 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:39:40 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:39:40 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 16:40:31 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 16:40:31 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:40:31 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:40:31 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 16:40:32 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 16:40:32 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:40:32 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:40:32 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 16:49:24 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 16:49:24 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:49:24 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:49:24 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 16:49:27 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 16:49:27 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:49:27 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 16:49:27 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 16:49:27 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 17:01:16 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 17:01:16 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 17:01:16 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 17:01:16 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 17:01:16 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 17:10:57 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 17:10:57 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 17:10:57 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 17:10:57 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 17:10:57 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 17:23:03 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 17:23:03 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 17:23:03 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 17:23:03 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 17:23:03 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 19:33:07 --> 404 Page Not Found: Js/bootstrap.min.js.map
+ERROR - 2018-10-26 19:33:07 --> 404 Page Not Found: Css/bootstrap.min.css.map
+ERROR - 2018-10-26 19:33:44 --> 404 Page Not Found: Js/bootstrap.min.js.map
+ERROR - 2018-10-26 19:33:44 --> 404 Page Not Found: Css/bootstrap.min.css.map
+ERROR - 2018-10-26 18:25:21 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 18:25:21 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:25:21 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:25:21 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 18:25:21 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 18:28:20 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 18:28:20 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:28:20 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:28:20 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 18:28:20 --> Could not find the language line "new exchange name"
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: contact C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 47
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 47
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: contact C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 48
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 48
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: contact C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 48
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 48
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: total_undismissed_announcements C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 55
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 65
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 65
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Undefined variable: client C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:31:58 --> Severity: Notice --> Trying to get property of non-object C:\xampp\htdocs\portal.coinflow.ai\application\views\themes\perfex\template_parts\navigation.php 67
+ERROR - 2018-10-26 18:41:17 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 18:41:17 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:41:17 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:41:17 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 18:41:54 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 18:41:54 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:41:54 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:41:54 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 18:42:01 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 18:42:01 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:42:01 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:42:01 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 18:42:34 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 18:42:34 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:42:34 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:42:34 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 18:43:46 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 18:43:46 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:43:46 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:43:46 --> Could not find the language line "exchange"
+ERROR - 2018-10-26 18:44:08 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 10
+ERROR - 2018-10-26 18:44:08 --> Severity: Notice --> Undefined property: stdClass::$setup_menu_active C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:44:08 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\portal.coinflow.ai\application\views\admin\includes\setup_menu.php 12
+ERROR - 2018-10-26 18:44:08 --> Could not find the language line "exchange"

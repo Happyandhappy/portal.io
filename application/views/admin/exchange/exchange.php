@@ -7,7 +7,7 @@
 					<div class="panel-body">
 						<div class="_buttons">
 							<a href="#" class="btn btn-info pull-left" onclick="add_exchange(); return false;" data-toggle="modal" data-target="#exchange_item_modal">
-								<?php echo _l('new_exchange_name'); ?>									
+								<?php echo _l('new exchange name'); ?>									
 							</a>
 						</div>
 						<div class="clearfix"></div>
@@ -31,16 +31,21 @@
   $(document).ready(()=>{
       $(".edit-title").addClass('hide');
       $(".add-title").removeClass('hide');
-      $(document).ready(function() {
-    	 $('#table').DataTable();
-    	 $('#table_wrapper').removeClass('table-loading');
-	  });	  
+      $('#table').DataTable();
+	  setTimeout(()=>{
+	  	$("#table").removeClass('hide');
+	 	$('#table_wrapper').removeClass('table-loading');
+	  }, 1000);
   });
 
  var add_exchange = function(){
-      $(".edit-title").addClass('hide');
-      $(".add-title").removeClass('hide');
-      $("#exchange_form").attr('action','<?php echo admin_url('exchange/add'); ?>');
+	$(".edit-title").addClass('hide');
+	$(".add-title").removeClass('hide');
+	$("#exchange_form").attr('action','<?php echo admin_url('exchange/add'); ?>');
+
+	$('#itemid').val('');
+	$('#name').val('');
+	$('#description').val('');
  }
 
  var edit_exchange = function(id){

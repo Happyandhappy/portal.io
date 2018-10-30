@@ -75,12 +75,13 @@ class Private_www extends Clients_controller {
             redirect(site_url('clients/login'));
         }
         
+        $data['exchanges'] = $this->exchange_model->get();
         $data['message'] = $message;
-        
-        //$this->load->view('private/_includes/header');
-        $this->load->view('private/_includes/content_header');
+        //$this->load->view('private/_includes/header');        
+        $this->load->view('private/_includes/header1');
+        // $this->load->view('private/_includes/content_header');
         $this->load->view('private/enter_coins',$data);
-        $this->load->view('private/_includes/footer');
+        $this->load->view('private/_includes/footer1');
     }
     
     public function charts_trends() {

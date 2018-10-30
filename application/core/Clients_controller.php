@@ -36,6 +36,7 @@ class Clients_controller extends CRM_Controller
         $this->load->model('proposals_model');
         $this->load->model('projects_model');
         $this->load->model('announcements_model');
+        $this->load->model('exchange_model');
 
         $_auto_loaded_vars = array(
             'departments' => $this->departments_model->get(false, true),
