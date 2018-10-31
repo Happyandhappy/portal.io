@@ -66,15 +66,22 @@ class Upload_ExchangeCSV extends CI_Controller {
 	// get amount by homecurrency for Trade in BTC market
 	function getHomecurrency($time, $currency){
 		$date = date('Y-m-d 00:00:00',strtotime($time));
+
         $query = $this->db->query("select * from cf_global_crypto_price_aud where Timestamp='".$date."'AND cryptocurrency='" . $currency . "'");
 		foreach ($query->result() as $row){
 			return $row->open;
 		}
 
-		// I should modify this code in the future, bugs
+		// if currency=OMG,POWR then get btc value in cf_global_crypto_price_btc
+		$result = 1;
 		$query = $this->db->query("select * from cf_global_crypto_price_btc where Timestamp='".$date."'AND cryptocurrency='" . $currency . "'");
+		
 		foreach ($query->result() as $row){
-			return $row->open;
+			$result = $result * $row->open;
+	        $query = $this->db->query("select * from cf_global_crypto_price_aud where Timestamp='".$date."'AND cryptocurrency='BTC'");
+			foreach ($query->result() as $row){
+				return $result * $row->open;
+			}			
 		}
 		return 1;
 	}
@@ -116,7 +123,7 @@ class Upload_ExchangeCSV extends CI_Controller {
 				}
 				else{
 					// bugs
-					$cur = 0.7;  // AUD/USD, if curr = AUD and deault=UAD, then call price api call and get AUD/USD value
+					$cur = 1;  // AUD/USD, if curr = AUD and deault=UAD, then call price api call and get AUD/USD value
 					$sell_valueinhomecurr = (float)$trades[$i+1][4] * $cur;
 				}
 			}
@@ -126,8 +133,8 @@ class Upload_ExchangeCSV extends CI_Controller {
 					$buy_valueinhomecurr =  abs((float)$trades[$i][4]);
 				}else{
 					// bugs
-					$cur = 0.7;  // AUD/USD, if curr = AUD and deault=UAD, then call price api call and get AUD/USD value
-					$buy_valueinhomecurr =  abs((float)$trades[$i][4]) * $cur;
+					$cur = 1;  // AUD/USD, if curr = AUD and deault=UAD, then call price api call and get AUD/USD value
+					$buy_valueinhomecurr =  abs((float)$trades[$i+1][4]) * $cur * $this->getHomecurrency($trades[$i][0], $trades[$i+1][3]);  // price * buy_amount
 				}
 			}
 
@@ -171,7 +178,7 @@ class Upload_ExchangeCSV extends CI_Controller {
 		    		"fee_amount"			=> abs((float)$trades[$i+2][4]),
 		    		"fee_coincurr"			=> $trades[$i+1][3],
 		    		"is_disposal"			=> $sell_is_coin ? 1 : 0,
-		    		"reason"				=> ""
+		    		"reason"				=> "Awaiting input"
 		    	);
 				$this->db->insert($dbname, $data_array);
             }
@@ -204,8 +211,7 @@ class Upload_ExchangeCSV extends CI_Controller {
 	    		"transf_currency" 	 	=> $transfers[$i][3],
 	    		"value_homecurr"		=> $rate * (float)$transfers[$i][4],
 	    		"fee"					=> $fees[$transfers[$i][3]] * $rate,
-	    		"txid"				 	=> $this->is_coin($transfers[$i][3]) == true?$this->get_txid($transfers[$i][5]):"",
-	    		"is_disposal"			=> 1//bugs
+	    		"txid"				 	=> $this->is_coin($transfers[$i][3]) == true?$this->get_txid($transfers[$i][5]):""	    		
 			);
 			$result = $this->db->get_where($dbname, $query)->result();
 			// if the record is already existed 
@@ -225,8 +231,8 @@ class Upload_ExchangeCSV extends CI_Controller {
 		    		"value_homecurr"		=> $rate * (float)$transfers[$i][4],
 		    		"fee"					=> $transfers[$i][2]=="Withdraw"? $fees[$transfers[$i][3]] * $rate : 0,
 		    		"txid"				 	=> $this->is_coin($transfers[$i][3]) == true?$this->get_txid($transfers[$i][5]):"",
-		    		"is_disposal"			=> 1, // bugs
-		    		"reason"				=> ""//bugs
+		    		"is_disposal"			=> 0, // bugs
+		    		"reason"				=> "Awaiting input"//bugs
 		    	);	    	
 				$this->db->insert($dbname, $data_array);
 			}
@@ -307,10 +313,6 @@ class Upload_ExchangeCSV extends CI_Controller {
 	}
 
 	public function upload(){
-		// print_r($_POST);
-		// print_r($_FILES);
-
-		// exit();
 		$csvMimes = array('application/vnd.ms-excel','text/plain','text/csv','text/tsv');
 		$lines = [];
 	    if(!empty($_FILES['file']) && in_array($_FILES['file']['type'],$csvMimes)){	    	

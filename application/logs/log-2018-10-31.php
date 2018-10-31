@@ -308,3 +308,6 @@ ERROR - 2018-10-31 14:00:13 --> 404 Page Not Found: Images/curve_bottom87.png
 ERROR - 2018-10-31 14:00:35 --> 404 Page Not Found: Images/curve_bottom87.png
 ERROR - 2018-10-31 14:06:25 --> 404 Page Not Found: Images/curve_bottom87.png
 ERROR - 2018-10-31 14:06:45 --> 404 Page Not Found: Images/curve_bottom87.png
+ERROR - 2018-10-31 14:20:49 --> 404 Page Not Found: Images/curve_bottom87.png
+ERROR - 2018-10-31 17:24:56 --> 404 Page Not Found: Images/curve_bottom87.png
+ERROR - 2018-10-31 17:25:20 --> 404 Page Not Found: Images/curve_bottom87.png
