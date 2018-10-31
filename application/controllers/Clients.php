@@ -1394,6 +1394,7 @@ class Clients extends Clients_controller
         if ($this->input->post()) {
             if ($this->form_validation->run() !== false) {
                 $data = $this->input->post();
+
                 // Unset recaptchafield
                 if (isset($data['g-recaptcha-response'])) {
                     unset($data['g-recaptcha-response']);

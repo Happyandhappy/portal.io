@@ -118,7 +118,7 @@ class Clients_model extends CRM_Model
 
         $hook_data                = do_action('before_client_added', array('data'=>$data));
         $data = $hook_data['data'];
-
+        var_dump($data);
         $this->db->insert('tblclients', $data);
 
         $userid = $this->db->insert_id();
@@ -886,6 +886,16 @@ class Clients_model extends CRM_Model
         return false;
     }
 
+    public function get_default_currency($id){
+        $this->db->select('value');
+        $this->db->where('relid', $id);
+        $this->db->where('fieldid', 1);
+        $result = $this->db->get('tblcustomfieldsvalues')->row();
+        if ($result){
+            return $result->value;
+        }
+        return 'AUD';
+    }
     /**
      *  Get customer billing details
      * @param   mixed $id   customer id

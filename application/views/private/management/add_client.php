@@ -5,10 +5,10 @@ $data['success'] = false;
 $data['data'] = [];
 
 if(isset($_REQUEST['email']) == false) {
-	$data['message'] = "Email was not given.";
-	$data['success'] = false;
-	echo json_encode($data);
-	return;
+    $data['message'] = "Email was not given.";
+    $data['success'] = false;
+    echo json_encode($data);
+    return;
 }
 
 $firstname = $_REQUEST['firstname'];
@@ -34,11 +34,11 @@ if ($count === 0) {
         'is_primary' => 0,
         'active'=>1,
         'invoice_emails' => 0,
-		'estimate_emails' => 0,
-		'credit_note_emails' => 0,
-		'contract_emails' => 0,
-		'task_emails' => 0,
-		'Project_emails' => 0
+        'estimate_emails' => 0,
+        'credit_note_emails' => 0,
+        'contract_emails' => 0,
+        'task_emails' => 0,
+        'Project_emails' => 0
     );
     $this->db->insert('tblcontacts', $client);
     
@@ -48,7 +48,7 @@ if ($count === 0) {
         'data' => $client
     );
 } else {
-	$data = array(
+    $data = array(
         'message' => "Duplicated email: " . $email,
         'success' => false
     );

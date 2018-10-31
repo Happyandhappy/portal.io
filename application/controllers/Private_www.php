@@ -51,7 +51,14 @@ class Private_www extends Clients_controller {
         $this->load->view('private/management/mng_client');
         $this->load->view('private/_includes/footer');
     }
-    
+    public function manage_clients() {
+        if (!is_client_logged_in()) {
+            redirect(site_url('clients/login'));
+        }
+        $this->load->view('private/_includes/header');
+        $this->load->view('private/reporting');
+        $this->load->view('private/_includes/footer');
+    }
     public function dashboard() {
         if (!is_client_logged_in()) {
             redirect(site_url('clients/login'));
@@ -76,12 +83,25 @@ class Private_www extends Clients_controller {
         }
         
         $data['exchanges'] = $this->exchange_model->get();
-        $data['message'] = $message;
+        $data['message']   = $message;
         //$this->load->view('private/_includes/header');        
         $this->load->view('private/_includes/header1');
         // $this->load->view('private/_includes/content_header');
         $this->load->view('private/enter_coins',$data);
         $this->load->view('private/_includes/footer1');
+    }
+    public function upload_data($message="") {
+        if (!is_client_logged_in()) {
+            redirect(site_url('clients/login'));
+        }
+        $current_user_id = get_client_user_id();
+        $data['clients'] = $this->clients_model->get_contacts($current_user_id);
+        $data['exchanges'] = $this->exchange_model->get();
+        $data['message'] = $message;
+
+        $this->load->view('private/_includes/header2');
+        $this->load->view('private/upload_data', $data);
+        $this->load->view('private/_includes/footer');
     }
     
     public function charts_trends() {
@@ -111,4 +131,30 @@ class Private_www extends Clients_controller {
         $this->load->view('private/_includes/footer');
     }
     
+    public function ledgers() {
+        if (!is_client_logged_in()) {
+            redirect(site_url('clients/login'));
+        }
+        $this->load->view('private/_includes/header');
+        $this->load->view('private/ledgers');
+        $this->load->view('private/_includes/footer');
+    }
+    public function statements() {
+        if (!is_client_logged_in()) {
+            redirect(site_url('clients/login'));
+        }
+        $this->load->view('private/_includes/header');
+        $this->load->view('private/statements');
+        $this->load->view('private/_includes/footer');
+    }
+
+    public function contact_us() {
+        if (!is_client_logged_in()) {
+            redirect(site_url('clients/login'));
+        }
+        $this->load->view('private/_includes/header');
+        $this->load->view('private/contact_us');
+        $this->load->view('private/_includes/footer');
+    }
+
 }

@@ -5,10 +5,10 @@ $data['success'] = false;
 $data['data'] = [];
 
 if(isset($_REQUEST['clientid']) == false) {
-	$data['message'] = "Not provided client ID.";
-	$data['success'] = false;
-	echo json_encode($data);
-	return;
+    $data['message'] = "Not provided client ID.";
+    $data['success'] = false;
+    echo json_encode($data);
+    return;
 }
 
 $clientid = $_REQUEST['clientid'];
@@ -28,7 +28,7 @@ if ($count != 0) {
         'data' => $clientid
     );
 } else {
-	$data = array(
+    $data = array(
         'message' => "Not exist the client ID." . $clientid,
         'success' => false
     );

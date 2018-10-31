@@ -190,7 +190,7 @@ select:focus,select:active{
 
 /* Links inside the dropdown */
 .dropdown-content a {
-    color: black;
+    color: #000000;
     padding: 10px 16px;
     text-decoration: none;
     display: block;
@@ -199,7 +199,7 @@ select:focus,select:active{
 
 /* Links inside the dropdown */
 .dropdown-content2 a {
-    color: black;
+    color: #000000;
     padding: 10px 16px;
     text-decoration: none;
     display: block;
@@ -230,9 +230,6 @@ select:focus,select:active{
 }
 .nav .after_content2{
 	background: url(../images/test7a.png);
-    background-size: auto;
-        padding-right: 866px;
-    background-position: 75px;
     
 }
 .nav .after_content:after{
@@ -250,10 +247,8 @@ select:focus,select:active{
 	/*transform: rotate(-180deg);
 	background: url(../images/bg_after_2.png) no-repeat;
 	*/
-	background: url(../images/curve_bottom6.png) no-repeat;
-	background-size: contain;
-    margin-left: -20px;
-    margin-bottom: px;
+	background: url(../images/curve_bottom87.png) no-repeat;
+	background-size: cover;
 }
 
 .home{
@@ -294,7 +289,8 @@ button[aria-expanded="false"] .collapse{
 	    padding-top: 30px;
 }
 .nav .row{
-	    position: relative
+	    position: relative;
+	height: 47px;
 }
 .socials li{
 	 padding-left: 3px;
@@ -318,7 +314,7 @@ button[aria-expanded="false"] .collapse{
 	position:relative;
 }
 .after_content{
-	    position: absolute;
+	position: absolute;
     content: "";
     height: 30px;
     left: 100%;
@@ -332,7 +328,7 @@ button[aria-expanded="false"] .collapse{
     height: 30px;
     left: 100%;
     bottom: 0px;
-    background: #174db8;
+	background:url('../images/test7a.png');
 }
 header .nav{
 	    border-top: 1px solid #123f98;
@@ -354,15 +350,19 @@ header .nav{
     height: 31px;
     width: 99px;
     bottom: 0px;
-	background:url('../images/bg_after.png') no-repeat;
+	background:url('../images/test7a.png') no-repeat;
     background-size: contain;
-    background-color: #203f8b;
     background-position: bottom right;
 }
 .nav{
 	background:url('../images/re_bg_menu.png') repeat-x;
 	background-position: top center;
-    
+}
+.nav2{
+	background:url('../images/curve_bottom7.png') no-repeat;
+	background-size: contain;
+	height: 48px;
+
 }
 .exchange .tb-cell{
 	vertical-align:middle;
@@ -1092,6 +1092,7 @@ footer .nav{
 }
 footer{
 	    padding-top: 30px;
+		background: #f6f6f6;
 }
 @media (max-width: 1199px){
 	.nav .row .col-md-12{
@@ -1116,9 +1117,14 @@ footer{
 		width:auto !important;
         background:#f6f6f6;
 	}
+.nav .after_content2{
+		width:auto !important;
+        background:#f6f6f6;
+	}
 	.nav .after_content:after{
 		display:none;
 	}
+
 	.nav .row .col-lg-5{
 		position:relative;
         background:#ececec;
@@ -1167,6 +1173,9 @@ button:hover{
 		padding-bottom:0px;    background-size: cover;
 	}
 	.after_content{
+		display:none;
+	}
+.after_content2{
 		display:none;
 	}
     
@@ -1308,12 +1317,9 @@ footer .topbar .after_right{
 	text-align:center;
 	background-color: transparent!important;
 	background-image:none!important;
-    font-size: 0px;
 }
-#enter_coin #pills-tab li{
-    width:90px;font-weight:bold;
-    font-family:OpenSans-SemiBold;
-    font-size: 14px;
+#enter_coin #pills-tab li{width:90px;font-weight:bold;
+font-family:OpenSans-SemiBold;
 }
 #enter_coin #pills-tab li a{
 	    height: 44px;
@@ -1345,8 +1351,8 @@ li #pills-csv-tab{
     width: 120px;
 }
 .nav .after_content2:after{
-	height: 45px;
-    width: 120px;
+	height: 0px;
+    width: 0px;
 }
 .nav .after_content{height: 44px;}
 .nav .after_content2{height: 44px;}

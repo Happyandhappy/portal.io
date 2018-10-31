@@ -6,10 +6,10 @@ $data['data'] = [];
 $i = 0;
 foreach ($query->result() as $row)
 {
-	$i++;
+  $i++;
     $data['data'][] = array(
       $row->id,
-	  $i,
+    $i,
       $row->firstname,
       $row->lastname,
       $row->email,

@@ -16,7 +16,7 @@
 			<div class="row head_title">
 				<div class="col-sm-12">
 						<div class="title">
-							<h2>Client Management</h2>
+							<h2>Manage Clients</h2>
 						</div>
 				</div>
 			</div>
@@ -24,7 +24,7 @@
 				<div class="col-sm-2"></div>
 				<div class="col-sm-8">
 					<div class="desc text-center">
-						<p>Client Management Description Here...</p>
+						<p>View, add or edit your clients here.</p>
 					</div>
 				</div>
 				<div class="col-sm-2"></div>
@@ -33,13 +33,12 @@
 		
 		
 		<!-- search and nav -->
-		<div class=row style="margin-bottom:20px;">
+		<div class=row>
 			<div class="col-sm-2">
-				<button type="button" class="form-control btn btn-primary" id="btn-add-client" onclick="add_client()">Add Client</button>
+				<div class="execute tb">
+					<button type="button" class="form-control exe tb-cell" id="btn-add-client" onclick="add_client()" style="position: relative; top: -20px; left: -20px;">Add a Client&nbsp; <i class="fa fa-angle-double-right"></i></button>
+                </div>
 			</div>
-			
-
-
 			<!--<div class="col-sm-7">-->
 				
 			<!--</div>-->
@@ -202,12 +201,12 @@
 	    size_labels: "col-sm-3",
 	    size_inputs: "col-sm-12",
 	    content: [
-	        { p: {text: "Input client info below:"}},
+	        { p: {text: "Click on a field to edit your client's data:"}},
 	        
 	        { input: {type: "text", 	label: "First Name",	name: "firstname",	id: "firstname",	placeholder: "", value: firstname}},
 	        { input: {type: "text", 	label: "Last Name",		name: "lastname",	id: "lastname", 	placeholder: "", value: lastname}},
 	        { input: {type: "email",	label: "Email",			name: "email",		id: "email",		placeholder: "", value: email}},
-	        { input: {type: "tel",		label: "Phone Number",	name: "phonenumber", id: "phonenumber", placeholder: "", value: phonenumber}},
+	        { input: {type: "tel",		label: "Phone",	name: "phonenumber", id: "phonenumber", placeholder: "", value: phonenumber}},
 
 	        ],
 	    before: function(window) { 
@@ -252,11 +251,11 @@
 	    size_labels: "col-sm-3",
 	    size_inputs: "col-sm-12",
 	    content: [
-	        { p: {text: "Input client info below:"}},
+	        { p: {text: "Please fill in your new client's details:"}},
 	        { input: {type: "text", 	label: "First Name",	name: "firstname",	id: "firstname",	placeholder: "", value: ""}},
 	        { input: {type: "text", 	label: "Last Name",		name: "lastname",	id: "lastname", 	placeholder: "", value: ""}},
 	        { input: {type: "email",	label: "Email",			name: "email",		id: "email",		placeholder: "", value: ""}},
-	        { input: {type: "tel",		label: "Phone Number",	name: "phonenumber", id: "phonenumber", placeholder: "", value: ""}},
+	        { input: {type: "tel",		label: "Phone",			name: "phonenumber", id: "phonenumber", placeholder: "", value: ""}},
 	        
 	        ],
 	    before: function(window) { 
