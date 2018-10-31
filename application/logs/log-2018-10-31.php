@@ -311,3 +311,19 @@ ERROR - 2018-10-31 14:06:45 --> 404 Page Not Found: Images/curve_bottom87.png
 ERROR - 2018-10-31 14:20:49 --> 404 Page Not Found: Images/curve_bottom87.png
 ERROR - 2018-10-31 17:24:56 --> 404 Page Not Found: Images/curve_bottom87.png
 ERROR - 2018-10-31 17:25:20 --> 404 Page Not Found: Images/curve_bottom87.png
+ERROR - 2018-10-31 18:05:31 --> 404 Page Not Found: Images/curve_bottom87.png
+ERROR - 2018-10-31 18:05:34 --> 404 Page Not Found: Images/curve_bottom87.png
+ERROR - 2018-10-31 17:05:51 --> Severity: error --> Exception: Call to undefined function get_trade_action_id() C:\xampp\htdocs\portal.coinflow.ai\application\controllers\Upload_ExchangeCSV.php 317
+ERROR - 2018-10-31 18:06:18 --> 404 Page Not Found: Images/curve_bottom87.png
+ERROR - 2018-10-31 18:06:30 --> 404 Page Not Found: Images/curve_bottom87.png
+ERROR - 2018-10-31 18:06:31 --> 404 Page Not Found: Images/curve_bottom87.png
+ERROR - 2018-10-31 17:06:43 --> Severity: Notice --> Undefined variable: dbname1 C:\xampp\htdocs\portal.coinflow.ai\application\controllers\Upload_ExchangeCSV.php 35
+ERROR - 2018-10-31 17:06:43 --> Query error: No tables used - Invalid query: SELECT *
+ORDER BY `id` DESC
+ LIMIT 1
+ERROR - 2018-10-31 18:07:22 --> 404 Page Not Found: Images/curve_bottom87.png
+ERROR - 2018-10-31 18:07:35 --> 404 Page Not Found: Images/curve_bottom87.png
+ERROR - 2018-10-31 18:46:04 --> 404 Page Not Found: Images/curve_bottom87.png
+ERROR - 2018-10-31 18:46:25 --> 404 Page Not Found: Images/curve_bottom87.png
+ERROR - 2018-10-31 19:10:40 --> 404 Page Not Found: Images/curve_bottom87.png
+ERROR - 2018-10-31 19:11:03 --> 404 Page Not Found: Images/curve_bottom87.png

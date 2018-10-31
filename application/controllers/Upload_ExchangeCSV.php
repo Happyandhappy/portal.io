@@ -26,14 +26,18 @@ class Upload_ExchangeCSV extends CI_Controller {
 	}
 
 	// get last trade_action_id of table
-	public function get_trade_action_id($dbname){
-		$last_row = $this->db->order_by('id',"desc")
-            ->limit(1)
-            ->get($dbname)
-            ->row();
-        if (isset($last_row))
-        	return $last_row->id + 1;
-        else return 1;
+	public function get_trade_action_id(){
+		$dbnames = ["cf_global_trade_banktransfer", "cf_global_trade_buysell", "cf_global_trade_transfer"];
+		$max = 0;
+		for ($i = 0 ; $i < 3 ; $i++){
+			$last_row = $this->db->order_by('id',"desc")
+	            ->limit(1)
+	            ->get($dbnames[$i])
+	            ->row();            
+	        if (isset($last_row) && $last_row->id > $max)
+	        	$max = $last_row->id;
+	    }
+        return $max;
 	}
 
 	// get last total_amount for Trade in BTC market
@@ -100,7 +104,7 @@ class Upload_ExchangeCSV extends CI_Controller {
         else return 0;
 	}
 // put buy/sell data to cf_global_trade_buysell // rule : actionType = "Trade"
-	function Tradehistory($trades, $user_id, $client, $exchange){		// Buy / Sell
+	function Tradehistory($trades, $user_id, $client, $exchange, $trade_action_id){		// Buy / Sell
 		$dbname = "cf_global_trade_buysell";
 		// default currency of user 
 		$default_currency = $this->clients_model->get_default_currency($user_id);
@@ -119,13 +123,13 @@ class Upload_ExchangeCSV extends CI_Controller {
 
 			if ($sell_is_coin == true && $buy_is_coin == false){ // sell = coin & buy = default currency 				
 				if ($default_currency ==  $trades[$i+1][3]){
-					$sell_valueinhomecurr = (float)$trades[$i+1][4];
+					$sell_valueinhomecurr = (float)$trades[$i+1][4];					
 				}
 				else{
-					// bugs
-					$cur = 1;  // AUD/USD, if curr = AUD and deault=UAD, then call price api call and get AUD/USD value
-					$sell_valueinhomecurr = (float)$trades[$i+1][4] * $cur;
+					// bugs					
+					$sell_valueinhomecurr = abs((float)$trades[$i][4]) * $this->getHomecurrency($trades[$i][0], $trades[$i][3]);
 				}
+				$buy_valueinhomecurr  = $sell_valueinhomecurr;
 			}
 
 			if ($sell_is_coin == false && $buy_is_coin == true){  // if sell_cur is not in coin_list  & buy in coin_list, 
@@ -136,6 +140,7 @@ class Upload_ExchangeCSV extends CI_Controller {
 					$cur = 1;  // AUD/USD, if curr = AUD and deault=UAD, then call price api call and get AUD/USD value
 					$buy_valueinhomecurr =  abs((float)$trades[$i+1][4]) * $cur * $this->getHomecurrency($trades[$i][0], $trades[$i+1][3]);  // price * buy_amount
 				}
+				$sell_valueinhomecurr = $buy_valueinhomecurr;
 			}
 
 			//check the record is already existed or not
@@ -158,15 +163,15 @@ class Upload_ExchangeCSV extends CI_Controller {
 			$result = $this->db->get_where($dbname, $query)->result();
 			// if the record is already existed 
             if(count($result) > 0){
-
             }else{
+            	$trade_action_id = $trade_action_id + 1;
 				$data_array = array(
 		    		"Timestamp"			 	=> $trades[$i][0],
 		    		"user_id"   		 	=> $user_id,
 		    		"client_id"			 	=> $client,
 		    		"exchange"  		 	=> $exchange,
 		    		"exchange_reference_id" => $trades[$i][6],
-		    		"trade_action_id" 	 	=> $this->get_trade_action_id($dbname),
+		    		"trade_action_id" 	 	=> $trade_action_id,
 		    		"sell_amount" 	 		=> abs((float)$trades[$i][4]),
 		    		"sell_coincurr" 	 	=> $trades[$i][3],
 		    		"sell_valueinhomecurr"	=> $sell_valueinhomecurr,
@@ -176,16 +181,17 @@ class Upload_ExchangeCSV extends CI_Controller {
 		    		"buy_valueinhomecurr"	=> $buy_valueinhomecurr,
 		    		"total_buy"				=> $this->get_total_amount($dbname, $user_id, $client, $trades[$i+1][3], false) + (float)$trades[$i+1][4],
 		    		"fee_amount"			=> abs((float)$trades[$i+2][4]),
-		    		"fee_coincurr"			=> $trades[$i+1][3],
+		    		"fee_coincurr"			=> $trades[$i+2][3],
 		    		"is_disposal"			=> $sell_is_coin ? 1 : 0,
-		    		"reason"				=> "Awaiting input"
+		    		"reason"				=> "Trade"
 		    	);
 				$this->db->insert($dbname, $data_array);
             }
 		}
+		return $trade_action_id;
 	}
 // put data to cf_global_trade_transfer // rule : actionType = "Fund Transfer" && currency is in coin_list
-	function Transferhistory($transfers, $user_id, $client, $exchange){
+	function Transferhistory($transfers, $user_id, $client, $exchange, $trade_action_id){
 		$dbname = "cf_global_trade_transfer";
 		$fees = array(
 					"BTC" => 0.0001,
@@ -218,13 +224,14 @@ class Upload_ExchangeCSV extends CI_Controller {
             if(count($result) > 0){
 
             }else{
+            	$trade_action_id = $trade_action_id + 1;
 				$data_array = array(
 		    		"Timestamp"			 	=> $transfers[$i][0],
 		    		"user_id"   		 	=> $user_id,
 		    		"client_id"			 	=> $client,
 		    		"exchange"  		 	=> $exchange,
 		    		"exchange_reference_id" => ctype_digit ($transfers[$i][6]) == true ? $transfers[$i][6]:$transfers[$i][7],
-		    		"trade_action_id" 	 	=> $this->get_trade_action_id($dbname),
+		    		"trade_action_id" 	 	=> $trade_action_id,
 		    		"transf_amount" 	 	=> (float)$transfers[$i][4],
 		    		"transf_currency" 	 	=> $transfers[$i][3],
 		    		"transf_disposal_total" => $transf_disposal_total,
@@ -237,9 +244,10 @@ class Upload_ExchangeCSV extends CI_Controller {
 				$this->db->insert($dbname, $data_array);
 			}
 		}
+		return $trade_action_id;
 	}
 
-	function Bankhistory($banks, $user_id, $client, $exchange){
+	function Bankhistory($banks, $user_id, $client, $exchange, $trade_action_id){
 		$dbname = "cf_global_trade_banktransfer";
 		for ($i = 0 ; $i < count($banks) ; $i++){
 			$query = array(
@@ -254,12 +262,13 @@ class Upload_ExchangeCSV extends CI_Controller {
 			// if the record is already existed 
             if(count($result) > 0){
             }else{
+            	$trade_action_id = $trade_action_id + 1;
 				$data_array = array(
 		    		"Timestamp"			 	=> $banks[$i][0],
 		    		"user_id"   		 	=> $user_id,
 		    		"client_id"			 	=> $client,
 		    		"exchange"  		 	=> $exchange,
-		    		"trade_action_id" 	 	=> $this->get_trade_action_id($dbname),
+		    		"trade_action_id" 	 	=> $trade_action_id,
 		    		"transf_amount" 	 	=> (float)$banks[$i][4],
 		    		"transf_currency" 	 	=> $banks[$i][3],
 		    		"value_homecurr"		=> 0,//bugs
@@ -306,10 +315,10 @@ class Upload_ExchangeCSV extends CI_Controller {
             else
             	array_push($banks, $line);
         }
-
-        $this->Tradehistory($trades, $current_user_id, $client, $exchange);        
-        $this->Transferhistory($transfers, $current_user_id, $client, $exchange);
-        $this->Bankhistory($banks, $current_user_id, $client, $exchange);
+        $trade_action_id = $this->get_trade_action_id();
+        $trade_action_id = $this->Tradehistory($trades, $current_user_id, $client, $exchange, $trade_action_id);
+        $trade_action_id = $this->Transferhistory($transfers, $current_user_id, $client, $exchange, $trade_action_id);
+        $trade_action_id = $this->Bankhistory($banks, $current_user_id, $client, $exchange, $trade_action_id);
 	}
 
 	public function upload(){
