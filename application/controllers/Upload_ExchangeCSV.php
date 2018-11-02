@@ -238,7 +238,7 @@ class Upload_ExchangeCSV extends CI_Controller {
 		    		"value_homecurr"		=> $rate * (float)$transfers[$i][4],
 		    		"fee"					=> $transfers[$i][2]=="Withdraw"? $fees[$transfers[$i][3]] * $rate : 0,
 		    		"txid"				 	=> $this->is_coin($transfers[$i][3]) == true?$this->get_txid($transfers[$i][5]):"",
-		    		"is_disposal"			=> 0, // bugs
+		    		"is_disposal"			=> (float)$transfers[$i][4] > 0 ? 1 : 0, // bugs
 		    		"reason"				=> "Awaiting input"//bugs
 		    	);	    	
 				$this->db->insert($dbname, $data_array);

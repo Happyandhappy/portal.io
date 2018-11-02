@@ -157,4 +157,15 @@ class Private_www extends Clients_controller {
         $this->load->view('private/_includes/footer');
     }
 
+    public function test(){
+        if (!is_client_logged_in()) {
+            redirect(site_url('clients/login'));
+        }
+
+        $user_id = get_client_user_id();
+        $client_ids = $this->clients_model->get_contacts($user_id);
+        foreach ($client_ids as $row) {
+            $this->reports_model->create_reports($user_id, $row['id']);   
+        }        
+    }
 }

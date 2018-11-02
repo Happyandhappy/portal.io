@@ -18,8 +18,99 @@
 			<div class="col-sm-2"></div>
 		</div>
 	</div>
-	<div class="container"><!--show --> 
-		<div class="chart">
+	<div class="container">
+		<section id="container">
+		    <section id="main-content">
+		        <section class="wrapper">
+		        <!-- page start-->
+
+		        <div class="row">
+		            <div class="col-sm-12">
+		                <section class="panel">
+		                    <header class="panel-heading">
+		                        Basic Wizard
+		                        <span class="tools pull-right">
+		                            <a href="javascript:;" class="fa fa-chevron-down"></a>
+		                            <a href="javascript:;" class="fa fa-cog"></a>
+		                            <a href="javascript:;" class="fa fa-times"></a>
+		                         </span>
+		                    </header>
+		                    <div class="panel-body">
+
+		                        <div id="wizard">
+		                            <h2>Select Client</h2>
+		                            <section>
+
+		                            </section>
+
+		                            <h2>Second Step</h2>
+		                            <section>
+		                                <form class="form-horizontal">
+		                                    <div class="form-group">
+		                                        <label class="col-lg-2 control-label">Phone</label>
+		                                        <div class="col-lg-8">
+		                                            <input type="text" class="form-control" placeholder="Phone">
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-lg-2 control-label">Mobile</label>
+		                                        <div class="col-lg-8">
+		                                            <input type="text" class="form-control" placeholder="Mobile">
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-lg-2 control-label">Address</label>
+		                                        <div class="col-lg-8">
+		                                            <textarea class="form-control" cols="60" rows="5"></textarea>
+		                                        </div>
+		                                    </div>
+		                                </form>
+		                            </section>
+
+		                            <h2>Third Step</h2>
+		                            <section>
+		                                <form class="form-horizontal">
+		                                    <div class="form-group">
+		                                        <label class="col-lg-2 control-label">Bill Name 1</label>
+		                                        <div class="col-lg-8">
+		                                            <input type="text" class="form-control" placeholder="Phone">
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-lg-2 control-label">Bill Name 2</label>
+		                                        <div class="col-lg-8">
+		                                            <input type="text" class="form-control" placeholder="Mobile">
+		                                        </div>
+		                                    </div>
+		                                    <div class="form-group">
+		                                        <label class="col-lg-2 control-label">Status</label>
+		                                        <div class="col-lg-8">
+		                                            <textarea class="form-control" cols="60" rows="5"></textarea>
+		                                        </div>
+		                                    </div>
+		                                </form>
+		                            </section>
+
+		                            <h2>Final Step</h2>
+		                            <section>
+		                                <p>Congratulations This is the Final Step</p>
+		                            </section>
+		                        </div>
+		                    </div>
+		                </section>
+		            </div>
+		        </div>
+		        <!-- page end-->
+		        </section>
+		    </section>
+		</section>
+	</div>    
+</section>
+<!--end ledgers-->
+
+
+		<!--show --> 
+		<!-- <div class="chart">
 			<div class="head">
 				<div class="row full-tab">
 					<div class="col-sm-3 item">
@@ -71,7 +162,4 @@
 				  </div>
 				</div>
 			</div>
-		</div>
-	</div>
-    
-</section><!--end ledgers-->
+		</div> -->

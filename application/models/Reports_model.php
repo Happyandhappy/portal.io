@@ -593,4 +593,99 @@ class Reports_model extends CRM_Model
     {
         return $this->db->query('SELECT DISTINCT(YEAR(date)) as year FROM tblinvoices WHERE clientid=' . get_client_user_id())->result_array();
     }
+
+    function get_last_row($dbname, $user_id, $client_id){
+        $last_row = $this->db->order_by('id',"desc")
+                ->where('user_id', $user_id)
+                ->where('client_id', $client_id)
+                ->limit(1)
+                ->get($dbname)
+                ->row();
+        if (isset($last_row))
+            return $last_row;
+        return null;
+    }
+    // create report from tables "cf_global_trade_buysell" & "cf_global_trade_transfer"
+    public function  create_reports($user_id, $client_id){
+        $buysell_db_name = "cf_global_trade_buysell";
+        $transfer_db_name = "cf_global_trade_transfer";
+        $disposalhistory_db_name = "cf_disposal_history";
+        $acquisition_history_db_name = "cf_acquisition_history";
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////
+        // insert buysell data from cf_global_trade_buysell to cf_disposal_history
+        $buysell_data1 = $this->db->query('SELECT * FROM ' . $buysell_db_name . ' WHERE is_disposal = 1 AND user_id='. $user_id . ' AND client_id =' . $client_id)->result_array();        
+
+        foreach ($buysell_data1 as $row) {
+            $data = array(
+                "user_id"       => $user_id,
+                "client_id"     => $client_id,
+                "Timestamp"     => $row['Timestamp'],
+                "exchange"      => $row['exchange'],
+                "trade_action_id"   => $row['trade_action_id'],
+                "disp_coincurr"     => $row['sell_coincurr'],
+                "disp_amount"       => $row['sell_amount'],
+                "disp_value"        => $row['sell_valueinhomecurr']
+            );
+            // check if already existed
+            $result = $this->db->get_where($disposalhistory_db_name, $data)->result();
+            if(count($result) > 0){
+            }else{
+                $last_row = $this->get_last_row($disposalhistory_db_name, $user_id, $client_id);
+                if ( isset($last_row)){
+                    // get last total value and add disp_value
+                    $data['total_dispvalue'] = $last_row->total_dispvalue + $data['disp_value'];
+                }else{
+                    // if last total value is not existed, then set disp_value to total value
+                    $data['total_dispvalue'] = $data['disp_value'];    
+                }
+                // insert data to db
+                $this->db->insert($disposalhistory_db_name, $data);
+            }
+        }
+
+        // insert disp data from cf_global_trade_transfer to cf_disposal_history
+        $transfer_data1 = $this->db->query('SELECT * FROM ' . $transfer_db_name . ' WHERE is_disposal = 1 AND transf_disposal_total < 0 AND user_id='. $user_id . ' AND client_id =' . $client_id)->result_array();
+        echo 'SELECT * FROM ' . $transfer_db_name . ' WHERE is_disposal = 1 AND transf_disposal_total < 0 AND user_id='. $user_id . ' AND client_id =' . $client_id;
+        var_dump($transfer_data1);
+        foreach ($transfer_data1 as $row) {
+            $data = array(
+                "user_id"       => $user_id,
+                "client_id"     => $client_id,
+                "Timestamp"     => $row['Timestamp'],
+                "exchange"      => $row['exchange'],
+                "trade_action_id"   => $row['trade_action_id'],
+                "disp_coincurr"     => $row['transf_currency'],
+                "disp_amount"       => $row['transf_amount'],
+                "disp_value"        => $row['value_homecurr']
+            );
+            // check if already existed
+            $result = $this->db->get_where($disposalhistory_db_name, $data)->result();
+            if (count($result) > 0){}
+            else{
+                $last_row = $this->get_last_row($disposalhistory_db_name, $user_id, $client_id);
+                if ( isset($last_row)){
+                    $data['total_dispvalue'] = $last_row->total_dispvalue + $data['disp_value'];
+                }else{
+                    $data['total_dispvalue'] = $data['disp_value'];
+                }
+                $this->db->insert($disposalhistory_db_name, $data);
+            }
+        }
+
+
+        ///////////////////////////////Insert data to cf_acquisition_history////////////////////////////
+        //SELECT rows from Cf_global_trade_buysell WHERE buy_coincurr exists in coinlist --> SELECT * FROM cf_global_trade_buysell WHERE buy_coincurr IN (SELECT coin_short FROM cf_coin_list)
+        $buysell_data2 = $this->db->query('SELECT * FROM ' . $buysell_db_name . ' WHERE buy_coincurr IN (SELECT coin_short FROM cf_coin_list) AND user_id =' . $user_id . ' AND client_id=' . $client_id)->result_array();
+
+        echo "<pre>";
+        print_r($buysell_data2);
+        echo "</pre>";
+
+        foreach ($buysell_data2 as $row) {
+            $data = array(
+                
+            );
+        }
+    }
 }
