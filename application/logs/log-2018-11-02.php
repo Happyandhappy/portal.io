@@ -79,3 +79,4 @@ ERROR - 2018-11-02 10:36:28 --> Severity: error --> Exception: Cannot use object
 ERROR - 2018-11-02 12:13:56 --> 404 Page Not Found: Images/curve_bottom87.png
 ERROR - 2018-11-02 12:14:13 --> 404 Page Not Found: Images/curve_bottom87.png
 ERROR - 2018-11-02 11:38:46 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'client_id=19' at line 1 - Invalid query: SELECT * FROM cf_global_trade_buysell WHERE sell_coincurr IN (SELECT coin_short FROM cf_coin_list) AND user_id =8AND client_id=19
+ERROR - 2018-11-02 17:33:38 --> Severity: Notice --> Undefined index: disp_value C:\xampp\htdocs\portal.coinflow.ai\application\models\Reports_model.php 700

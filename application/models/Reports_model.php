@@ -678,14 +678,58 @@ class Reports_model extends CRM_Model
         //SELECT rows from Cf_global_trade_buysell WHERE buy_coincurr exists in coinlist --> SELECT * FROM cf_global_trade_buysell WHERE buy_coincurr IN (SELECT coin_short FROM cf_coin_list)
         $buysell_data2 = $this->db->query('SELECT * FROM ' . $buysell_db_name . ' WHERE buy_coincurr IN (SELECT coin_short FROM cf_coin_list) AND user_id =' . $user_id . ' AND client_id=' . $client_id)->result_array();
 
-        echo "<pre>";
-        print_r($buysell_data2);
-        echo "</pre>";
-
         foreach ($buysell_data2 as $row) {
             $data = array(
-                
+                "user_id" => $user_id,
+                "client_id" => $client_id,
+                "Timestamp" => $row['Timestamp'],
+                "trade_action_id" => $row['trade_action_id'],
+                "exchange"  => $row['exchange'],
+                "acq_amount"   => $row['sell_amount'],
+                "acq_coincurr"  => $row['sell_coincurr'],
+                "acq_value"     => $row['sell_valueinhomecurr']                
             );
+                        // check if already existed
+            $result = $this->db->get_where($acquisition_history_db_name, $data)->result();
+            if (count($result) > 0){}
+            else{
+                $last_row = $this->get_last_row($acquisition_history_db_name, $user_id, $client_id);
+                if ( isset($last_row)){
+                    $data['total_acqvalue'] = $last_row->total_acqvalue + $data['acq_value'];
+                }else{
+                    $data['total_acqvalue'] = $data['acq_value'];
+                }
+                $this->db->insert($acquisition_history_db_name, $data);
+            }
+        }
+
+        // insert disp data from cf_global_trade_transfer to cf_disposal_history
+        $transfer_data2 = $this->db->query('SELECT * FROM ' . $transfer_db_name . ' WHERE is_disposal = 1 AND transf_disposal_total < 0 AND user_id='. $user_id . ' AND client_id =' . $client_id)->result_array();
+        echo 'SELECT * FROM ' . $transfer_db_name . ' WHERE is_disposal = 1 AND transf_disposal_total > 0 AND user_id='. $user_id . ' AND client_id =' . $client_id;
+        var_dump($transfer_data1);
+        foreach ($transfer_data1 as $row) {
+            $data = array(
+                "user_id"       => $user_id,
+                "client_id"     => $client_id,
+                "Timestamp"     => $row['Timestamp'],
+                "exchange"      => $row['exchange'],
+                "trade_action_id"   => $row['trade_action_id'],
+                "acq_coincurr"     => $row['transf_currency'],
+                "acq_amount"       => $row['transf_amount'],
+                "acq_value"        => $row['value_homecurr'] + $row['fee']
+            );
+            // check if already existed
+            $result = $this->db->get_where($acquisition_history_db_name, $data)->result();
+            if (count($result) > 0){}
+            else{
+                $last_row = $this->get_last_row($acquisition_history_db_name, $user_id, $client_id);
+                if ( isset($last_row)){
+                    $data['total_acqvalue'] = $last_row->total_acqvalue + $data['acq_value'];
+                }else{
+                    $data['total_acqvalue'] = $data['acq_value'];
+                }
+                $this->db->insert($acquisition_history_db_name, $data);
+            }
         }
     }
 }
