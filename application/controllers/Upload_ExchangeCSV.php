@@ -4,6 +4,7 @@ class Upload_ExchangeCSV extends CI_Controller {
 	
 	public function __construct() {
 		parent::__construct();
+		$this->load->model('reports_model');
 	}
 	
 	public function is_coin($currency){
@@ -116,9 +117,10 @@ class Upload_ExchangeCSV extends CI_Controller {
 
 			$sell_valueinhomecurr = 0;
 			$buy_valueinhomecurr  = 0;
+			
 			if ($sell_is_coin == true && $buy_is_coin == true){  // if both are in coin_list
 				$sell_valueinhomecurr = $this->getHomecurrency($trades[$i][0], $trades[$i][3])* abs((float)$trades[$i][4]);
-				$buy_valueinhomecurr  = $this->getHomecurrency($trades[$i][0], $trades[$i+1][3])* abs((float)$trades[$i+1][4]);
+				$buy_valueinhomecurr  = $this->getHomecurrency($trades[$i][0], $trades[$i+1][3])* abs((float)$trades[$i+1][4]);				
 			}
 
 			if ($sell_is_coin == true && $buy_is_coin == false){ // sell = coin & buy = default currency 				
@@ -127,7 +129,7 @@ class Upload_ExchangeCSV extends CI_Controller {
 				}
 				else{
 					// bugs					
-					$sell_valueinhomecurr = abs((float)$trades[$i][4]) * $this->getHomecurrency($trades[$i][0], $trades[$i][3]);
+					$sell_valueinhomecurr = abs((float)$trades[$i][4]) * $this->getHomecurrency($trades[$i][0], $trades[$i][3]);					
 				}
 				$buy_valueinhomecurr  = $sell_valueinhomecurr;
 			}
@@ -138,7 +140,7 @@ class Upload_ExchangeCSV extends CI_Controller {
 				}else{
 					// bugs
 					$cur = 1;  // AUD/USD, if curr = AUD and deault=UAD, then call price api call and get AUD/USD value
-					$buy_valueinhomecurr =  abs((float)$trades[$i+1][4]) * $cur * $this->getHomecurrency($trades[$i][0], $trades[$i+1][3]);  // price * buy_amount
+					$buy_valueinhomecurr =  abs((float)$trades[$i+1][4]) * $cur * $this->getHomecurrency($trades[$i][0], $trades[$i+1][3]);  // price * buy_amount					
 				}
 				$sell_valueinhomecurr = $buy_valueinhomecurr;
 			}
@@ -156,9 +158,9 @@ class Upload_ExchangeCSV extends CI_Controller {
 	    		"buy_amount"			=> (float)$trades[$i+1][4],
 	    		"buy_coincurr"			=> $trades[$i+1][3],
 	    		"buy_valueinhomecurr"	=> $buy_valueinhomecurr,
-	    		"fee_amount"			=> abs((float)$trades[$i+2][4]),
+	    		"fee_amount"			=> abs((float)$trades[$i+2][4]),	    		
 	    		"fee_coincurr"			=> $trades[$i+1][3],
-	    		"is_disposal"			=> $sell_is_coin ? 1 : 0,
+	    		"is_disposal"			=> $sell_is_coin ? 1 : 0,	    		
 			);			
 			$result = $this->db->get_where($dbname, $query)->result();
 			// if the record is already existed 
@@ -182,6 +184,7 @@ class Upload_ExchangeCSV extends CI_Controller {
 		    		"total_buy"				=> $this->get_total_amount($dbname, $user_id, $client, $trades[$i+1][3], false) + (float)$trades[$i+1][4],
 		    		"fee_amount"			=> abs((float)$trades[$i+2][4]),
 		    		"fee_coincurr"			=> $trades[$i+2][3],
+		    		"fee_homecurr"			=> abs((float)$trades[$i+2][4]) * $this->getHomecurrency($trades[$i][0], $trades[$i+2][3]),
 		    		"is_disposal"			=> $sell_is_coin ? 1 : 0,
 		    		"reason"				=> "Trade"
 		    	);
@@ -201,7 +204,7 @@ class Upload_ExchangeCSV extends CI_Controller {
 					"XRP" => 0.15,
 					"BCH" => 0.0001,
 					"OMG" => 0.15,
-					"POWR" => 5 );//bugs
+					"POWR" => 5 );//bugs		
 		for ($i = 0 ; $i < count($transfers) ; $i++){
 			$transf_disposal_total = $this->get_total_disposal_amount($dbname, $user_id, $client, $transfers[$i][3]) + (float)$transfers[$i][4];
 			$rate = $this->getHomecurrency($transfers[$i][0], $transfers[$i][3]);
@@ -236,7 +239,7 @@ class Upload_ExchangeCSV extends CI_Controller {
 		    		"transf_currency" 	 	=> $transfers[$i][3],
 		    		"transf_disposal_total" => $transf_disposal_total,
 		    		"value_homecurr"		=> $rate * (float)$transfers[$i][4],
-		    		"fee"					=> $transfers[$i][2]=="Withdraw"? $fees[$transfers[$i][3]] * $rate : 0,
+		    		"fee"			=> $transfers[$i][2]=="Withdraw"? $fees[$transfers[$i][3]] * $rate : 0,
 		    		"txid"				 	=> $this->is_coin($transfers[$i][3]) == true?$this->get_txid($transfers[$i][5]):"",
 		    		"is_disposal"			=> (float)$transfers[$i][4] > 0 ? 1 : 0, // bugs
 		    		"reason"				=> "Awaiting input"//bugs
@@ -319,13 +322,16 @@ class Upload_ExchangeCSV extends CI_Controller {
         $trade_action_id = $this->Tradehistory($trades, $current_user_id, $client, $exchange, $trade_action_id);
         $trade_action_id = $this->Transferhistory($transfers, $current_user_id, $client, $exchange, $trade_action_id);
         $trade_action_id = $this->Bankhistory($banks, $current_user_id, $client, $exchange, $trade_action_id);
+
+        $this->reports_model->create_reports($current_user_id, $client);
+        $this->reports_model->creat_gainloss_ledger($current_user_id, $client);
 	}
 
 	public function upload(){
 		$csvMimes = array('application/vnd.ms-excel','text/plain','text/csv','text/tsv');
 		$lines = [];
 	    if(!empty($_FILES['file']) && in_array($_FILES['file']['type'],$csvMimes)){	    	
-	        if(is_uploaded_file($_FILES['file']['tmp_name'])){
+	        if(is_uploaded_file($_FILES['file']['tmp_name'])){	        	
 	        	$exchange = $this->input->post('exchange');
 	        	$history  = $this->input->post('history');
 	        	$client   = $this->input->post('client');
@@ -335,7 +341,7 @@ class Upload_ExchangeCSV extends CI_Controller {
 	            // skip first line
 	            // if your csv file have no heading, just comment the next line
 	            fgetcsv($csvFile);
-	            if ($exchange == "BTC market")	            
+	            if ($exchange == "BTC Markets")	            
 	            	$this->upload_BCTMarket($csvFile,$history,$client);	            
 	            //close opened csv file
 	            fclose($csvFile);

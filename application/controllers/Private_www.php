@@ -165,7 +165,8 @@ class Private_www extends Clients_controller {
         $user_id = get_client_user_id();
         $client_ids = $this->clients_model->get_contacts($user_id);
         foreach ($client_ids as $row) {
-            $this->reports_model->create_reports($user_id, $row['id']);   
+            $this->reports_model->create_reports($user_id, $row['id']);
+            $this->reports_model->creat_gainloss_ledger($user_id, $row['id']);            
         }        
     }
 }

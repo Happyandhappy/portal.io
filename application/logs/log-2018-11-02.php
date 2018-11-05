@@ -80,3 +80,14 @@ ERROR - 2018-11-02 12:13:56 --> 404 Page Not Found: Images/curve_bottom87.png
 ERROR - 2018-11-02 12:14:13 --> 404 Page Not Found: Images/curve_bottom87.png
 ERROR - 2018-11-02 11:38:46 --> Query error: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'client_id=19' at line 1 - Invalid query: SELECT * FROM cf_global_trade_buysell WHERE sell_coincurr IN (SELECT coin_short FROM cf_coin_list) AND user_id =8AND client_id=19
 ERROR - 2018-11-02 17:33:38 --> Severity: Notice --> Undefined index: disp_value C:\xampp\htdocs\portal.coinflow.ai\application\models\Reports_model.php 700
+ERROR - 2018-11-02 19:58:06 --> 404 Page Not Found: Private_www/index
+ERROR - 2018-11-02 19:58:22 --> 404 Page Not Found: Js/bootstrap.min.js.map
+ERROR - 2018-11-02 19:58:22 --> 404 Page Not Found: Css/bootstrap.min.css.map
+ERROR - 2018-11-02 20:14:42 --> 404 Page Not Found: Js/bootstrap.min.js.map
+ERROR - 2018-11-02 20:14:42 --> 404 Page Not Found: Css/bootstrap.min.css.map
+ERROR - 2018-11-02 20:19:03 --> 404 Page Not Found: Js/bootstrap.min.js.map
+ERROR - 2018-11-02 20:19:04 --> 404 Page Not Found: Css/bootstrap.min.css.map
+ERROR - 2018-11-02 20:26:20 --> 404 Page Not Found: Js/bootstrap.min.js.map
+ERROR - 2018-11-02 20:26:20 --> 404 Page Not Found: Css/bootstrap.min.css.map
+ERROR - 2018-11-02 20:46:49 --> 404 Page Not Found: Js/bootstrap.min.js.map
+ERROR - 2018-11-02 20:46:49 --> 404 Page Not Found: Css/bootstrap.min.css.map

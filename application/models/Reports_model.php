@@ -610,7 +610,7 @@ class Reports_model extends CRM_Model
         $buysell_db_name = "cf_global_trade_buysell";
         $transfer_db_name = "cf_global_trade_transfer";
         $disposalhistory_db_name = "cf_disposal_history";
-        $acquisition_history_db_name = "cf_acquisition_history";
+        $acquisition_history_db_name = "cf_acquisition_history";        
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
         // insert buysell data from cf_global_trade_buysell to cf_disposal_history
@@ -646,8 +646,7 @@ class Reports_model extends CRM_Model
 
         // insert disp data from cf_global_trade_transfer to cf_disposal_history
         $transfer_data1 = $this->db->query('SELECT * FROM ' . $transfer_db_name . ' WHERE is_disposal = 1 AND transf_disposal_total < 0 AND user_id='. $user_id . ' AND client_id =' . $client_id)->result_array();
-        echo 'SELECT * FROM ' . $transfer_db_name . ' WHERE is_disposal = 1 AND transf_disposal_total < 0 AND user_id='. $user_id . ' AND client_id =' . $client_id;
-        var_dump($transfer_data1);
+
         foreach ($transfer_data1 as $row) {
             $data = array(
                 "user_id"       => $user_id,
@@ -685,11 +684,12 @@ class Reports_model extends CRM_Model
                 "Timestamp" => $row['Timestamp'],
                 "trade_action_id" => $row['trade_action_id'],
                 "exchange"  => $row['exchange'],
-                "acq_amount"   => $row['sell_amount'],
-                "acq_coincurr"  => $row['sell_coincurr'],
-                "acq_value"     => $row['sell_valueinhomecurr']                
+                "acq_amount"   => $row['buy_amount'],
+                "acq_coincurr"  => $row['buy_coincurr'],
+                "acq_value"     => $row['buy_valueinhomecurr'],
+                "fee_homecurr"  => $row['fee_homecurr']
             );
-                        // check if already existed
+            // check if already existed
             $result = $this->db->get_where($acquisition_history_db_name, $data)->result();
             if (count($result) > 0){}
             else{
@@ -705,8 +705,7 @@ class Reports_model extends CRM_Model
 
         // insert disp data from cf_global_trade_transfer to cf_disposal_history
         $transfer_data2 = $this->db->query('SELECT * FROM ' . $transfer_db_name . ' WHERE is_disposal = 1 AND transf_disposal_total < 0 AND user_id='. $user_id . ' AND client_id =' . $client_id)->result_array();
-        echo 'SELECT * FROM ' . $transfer_db_name . ' WHERE is_disposal = 1 AND transf_disposal_total > 0 AND user_id='. $user_id . ' AND client_id =' . $client_id;
-        var_dump($transfer_data1);
+
         foreach ($transfer_data1 as $row) {
             $data = array(
                 "user_id"       => $user_id,
@@ -716,7 +715,8 @@ class Reports_model extends CRM_Model
                 "trade_action_id"   => $row['trade_action_id'],
                 "acq_coincurr"     => $row['transf_currency'],
                 "acq_amount"       => $row['transf_amount'],
-                "acq_value"        => $row['value_homecurr'] + $row['fee']
+                "acq_value"        => $row['value_homecurr'] + $row['fee'],
+                "fee_homecurr"  => $row['fee']
             );
             // check if already existed
             $result = $this->db->get_where($acquisition_history_db_name, $data)->result();
@@ -731,5 +731,84 @@ class Reports_model extends CRM_Model
                 $this->db->insert($acquisition_history_db_name, $data);
             }
         }
+    }
+
+    public function creat_gainloss_ledger($user_id, $client_id){
+        $dis_db_name = "cf_disposal_history";
+        $acq_db_name = "cf_acquisition_history";
+        $gainloss_db_name = "cf_gainloss_ledger";
+        $coinlist_db_name = "cf_coin_list";        
+
+        $coin_data = $this->db->get($coinlist_db_name)->result_array();
+        foreach ($coin_data as $coin) {
+            $dis_data = $this->db->query("select * from " . $dis_db_name . " where user_id=" . $user_id . " AND client_id = " . $client_id . " AND disp_coincurr = '" . $coin['coin_short'] . "' ORDER BY Timestamp ASC")->result_array();
+            $acq_data = $this->db->query("select * from " . $acq_db_name . " where user_id=" . $user_id . " AND client_id = " . $client_id . " AND acq_coincurr = '" . $coin['coin_short'] . "' ORDER BY Timestamp ASC")->result_array();
+            $data = array();
+            $sold_batch_rem = 0;
+
+            if(count($dis_data)>0 && count($acq_data)>0){
+                $i = 0; $j = 0;
+                $data = array(
+                        "user_id"       => $user_id,
+                        "client_id"     => $client_id,
+                        "coincurr"      => $dis_data[$i]['disp_coincurr'],
+                        "sold_id"       => $dis_data[$i]['trade_action_id'],
+                        "sold_Timestamp"=> $dis_data[$i]['Timestamp'],
+                        "sold_amount"   => $dis_data[$i]['disp_amount'],
+                        "sold_value"    => $dis_data[$i]['disp_value'],
+                        "cost_amount"   => 0,
+                        "cost_value"    => 0,
+                        "cost_batch_rem"=> $dis_data[$i]['disp_amount'],
+                        "cost_fee_value"=> 0,
+                        "fee_batch_rem" => 0,
+                        "held_for"      => '',
+                        "gain_loss"     => 0,
+                    );
+                $cost_ratio = 0;
+                $sold_ratio = $data['sold_value']/$data['sold_amount'];
+
+                while ($i < count($dis_data) -1  && $j < count($acq_data)) {
+
+                    if ($data['cost_batch_rem'] > 0){
+                        // if coin is exist then get cost records
+                        $data['cost_id'] = $acq_data[$j]['trade_action_id'];
+                        $data['cost_amount'] = $acq_data[$j]['acq_amount'];
+                        $data['cost_value'] = $acq_data[$j]['acq_value'];
+                        $data['cost_Timestamp'] = $acq_data[$j]['Timestamp'];
+                        $data['cost_fee_value'] = $acq_data[$j]['fee_homecurr'];
+                        $cost_ratio = $acq_data[$j]['acq_value']/$acq_data[$j]['acq_amount'];
+                        $cost_batch_rem  = $data['cost_batch_rem'] - $data['cost_amount'];
+                        $j = $j + 1;
+                    }else{
+                        // if coin doesnot exist then get sold records
+                        $i = $i + 1;
+                        $data['sold_id'] = $dis_data[$i]['trade_action_id'];
+                        $data['sold_amount'] = $dis_data[$i]['disp_amount'];
+                        $data['sold_value'] = $dis_data[$i]['disp_value'];
+                        $data['sold_Timestamp'] = $dis_data[$i]['Timestamp'];
+                        $data['cost_fee_value'] = 0;
+                        // add cost_amount to cost_batch_rem
+                        $cost_batch_rem  = $data['cost_batch_rem'] + $data['cost_amount'];
+                        $sold_ratio = $dis_data[$i]['disp_value']/$dis_data[$i]['disp_amount'];
+                    }
+                    
+                    // set sold_amount and cost_amount the same
+                    $data['cost_batch_rem'] = $cost_batch_rem;
+                    if ($cost_batch_rem > 0){
+                        $data['sold_amount'] = $data['cost_amount'];
+                        $data['sold_value'] = $sold_ratio * $data['sold_amount'];
+                    }else{
+                        $data['cost_amount'] = $data['sold_amount'];
+                        $data['cost_value'] = $cost_ratio * $data['cost_amount'];
+                    }
+                    // get gain_loss
+                    $data['gain_loss']  = $data['sold_value'] - $data['cost_value'];
+                    // get differece from two timestamps
+                    $held_for = date_diff(date_create($data['sold_Timestamp']), date_create($data['cost_Timestamp']));
+                    $data['held_for'] = $held_for->days . "days, " . $held_for->h . "h";
+                    $this->db->insert($gainloss_db_name,$data);
+                }
+            }
+        }        
     }
 }
