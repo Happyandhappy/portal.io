@@ -169,4 +169,7 @@ class Private_www extends Clients_controller {
             $this->reports_model->creat_gainloss_ledger($user_id, $row['id']);            
         }        
     }
+    /* $str = '<?php echo "string"; ?>'; // Your DB content
+    /eval("?> $str <?php ");*/
 }
+

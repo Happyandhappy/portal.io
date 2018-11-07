@@ -743,6 +743,178 @@ class Reports_model extends CRM_Model
         foreach ($coin_data as $coin) {
             $dis_data = $this->db->query("select * from " . $dis_db_name . " where user_id=" . $user_id . " AND client_id = " . $client_id . " AND disp_coincurr = '" . $coin['coin_short'] . "' ORDER BY Timestamp ASC")->result_array();
             $acq_data = $this->db->query("select * from " . $acq_db_name . " where user_id=" . $user_id . " AND client_id = " . $client_id . " AND acq_coincurr = '" . $coin['coin_short'] . "' ORDER BY Timestamp ASC")->result_array();
+            if (count($dis_data) > 0 && count($acq_data) > 0){
+                $data = array(
+                        "user_id"       => $user_id,
+                        "client_id"     => $client_id,
+                        "sold_id"       => $dis_data[0]['trade_action_id'],
+                        "coincurr"     => $coin['coin_short'],
+                        "sold_Timestamp"=> $dis_data[0]['Timestamp'],
+                        "sold_amount"   => $dis_data[0]['disp_amount'],
+                        "sold_value"    => $dis_data[0]['disp_value'],
+                        "cost_id"       => 0,
+                        "cost_Timestamp"=> '',
+                        "cost_amount"   => 0,
+                        "cost_value"    => 0,
+                        "cost_fee_value"=> 0,
+                        "held_for"      => "",
+                        "gain_loss"     => 0
+                    );
+                $i = 1;
+                $j = 0;
+                while (1) {
+                    if($i >= count($dis_data) || $j >= count($acq_data)) break;
+                    if ( $data['sold_amount'] > 0 && $j < count($acq_data)){
+                        $cost_amount    = $acq_data[$j]['acq_amount'];
+                        $cost_value     = $acq_data[$j]['acq_value'];
+                        $cost_ratio     = $cost_value/$cost_amount;
+                        $cost_Timestamp = $acq_data[$j]['Timestamp'];
+                        $cost_fee_value = $acq_data[$j]['fee_homecurr'];
+                        $data['cost_id']= $acq_data[$j]['trade_action_id'];
+                        $held_for = date_diff(date_create($data['sold_Timestamp']), date_create($cost_Timestamp));
+                        $data['held_for'] = $held_for->days . "days, " . $held_for->h . "h";
+
+                        if ($data['sold_amount'] - $cost_amount > 0 ){
+                            // make record to store to db
+                            $sold_ratio             = $data['sold_value']/$data['sold_amount'];
+                            $sold_remain            = $data['sold_amount'] - $cost_amount;
+                            $data['sold_value']     = $sold_ratio * $cost_amount;
+                            $data['sold_amount']    = $cost_amount;
+
+                            $data['cost_amount']    = $cost_amount;
+                            $data['cost_value']     = $cost_value;
+                            $data['cost_Timestamp'] = $cost_Timestamp;
+                            $data['cost_fee_value'] = $cost_fee_value;
+                            $data['gain_loss']      = $data['sold_value'] - $data['cost_value'] - $data['cost_fee_value'];
+
+                            $this->db->insert($gainloss_db_name, $data);
+                            // make record for next calculation
+                            $data['sold_amount']    = $sold_remain;
+                            $data['sold_value']     = $sold_ratio * $sold_remain;
+                            $data['cost_value']     = 0;
+                            $data['cost_amount']    = 0;
+                            $data['cost_fee_value'] = 0;
+                            $data['gain_loss'] = 0;
+                        }else{
+                            // make record to store to db
+                            $cost_remain            = $cost_amount - $data['sold_amount'];
+                            $data['cost_amount']    = $data['sold_amount'];
+                            $data['cost_value']     = $cost_ratio * $data['sold_amount'];
+                            $data['cost_fee_value'] = $cost_fee_value * $data['cost_amount']/$cost_amount;
+                            $data['cost_Timestamp'] = $cost_Timestamp;
+                            $data['gain_loss']      = $data['sold_value'] - $data['cost_value'] - $data['cost_fee_value'];
+                            $this->db->insert($gainloss_db_name, $data);
+
+                            // make record for next calculation
+                            $data['cost_amount']    = $cost_remain;
+                            $data['cost_value']     = $cost_ratio * $cost_remain;
+                            $data['cost_fee_value'] = $cost_fee_value - $data['cost_fee_value'];
+                            $data['sold_amount']    = 0;
+                            $data['sold_value']     = 0;
+                            $data['gain_loss'] = 0;
+                        }
+                        $j = $j + 1;
+                    }else{
+                        if ($i < count($dis_data)){
+                            $sold_amount    = $dis_data[$i]['disp_amount'];
+                            $sold_value     = $dis_data[$i]['disp_value'];
+                            $sold_Timestamp = $dis_data[$i]['Timestamp'];
+                            $sold_id        = $dis_data[$i]['trade_action_id'];
+                            $sold_ratio     = $sold_value / $sold_amount;
+                            $data['sold_id']= $dis_data[$i]['trade_action_id'];
+                            $held_for = date_diff(date_create($sold_Timestamp), date_create($data['cost_Timestamp']));
+                            $data['held_for'] = $held_for->days . "days, " . $held_for->h . "h";
+
+                            if ($data['cost_amount'] - $sold_amount > 0 ){
+                                $cost_ratio             = $data['cost_value'] / $data['cost_amount'];
+                                $cost_remain            = $data['cost_amount'] - $sold_amount;
+                                $cost_fee_remain        = $data['cost_fee_value'] / $data['cost_amount'] * $cost_remain;
+                                $data['cost_fee_value'] = $data['cost_fee_value'] - $cost_fee_remain;
+                                $data['cost_amount']    = $sold_amount;
+                                $data['cost_value']     = $cost_ratio * $sold_amount;
+
+                                $data['sold_amount']    = $sold_amount;
+                                $data['sold_value']     = $sold_value;
+                                $data['sold_Timestamp'] = $sold_Timestamp;
+                                $data['gain_loss']      = $data['sold_value'] - $data['cost_value'] - $data['cost_fee_value'];
+                                $this->db->insert($gainloss_db_name, $data);
+
+                                // make record for next calculation
+                                $data['cost_amount']    = $cost_remain;
+                                $data['cost_fee_value'] = $cost_fee_remain;
+                                $data['cost_value']     = $cost_ratio * $cost_remain;
+                                $data['sold_amount']    = 0;
+                                $data['sold_value']     = 0;
+                                $data['gain_loss']      = 0;
+                            }else{
+                                $sold_ratio = $sold_value / $sold_amount;
+                                $sold_remain = $sold_amount - $data['cost_amount'];
+
+                                $data['sold_amount'] = $data['cost_amount'];
+                                $data['sold_value']  = $sold_ratio * $data['cost_amount'];
+                                $data['sold_Timestamp'] = $sold_Timestamp;
+                                $data['gain_loss']      = $data['sold_value'] - $data['cost_value'] - $data['cost_fee_value'];
+                                $this->db->insert($gainloss_db_name, $data);
+
+                                // make record for next calculation
+                                $data['cost_amount']    = 0;
+                                $data['cost_value']     = 0;
+                                $data['cost_fee_value'] = 0;
+                                $data['sold_amount']    = $sold_remain;
+                                $data['sold_value']     = $sold_ratio * $sold_remain;
+                                $data['gain_loss'] = 0;
+                            }
+                            $i = $i + 1;
+                        }                    
+                    }
+                }
+            }
+        }
+                  
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    public function creat_gainloss_ledger($user_id, $client_id){
+        $dis_db_name = "cf_disposal_history";
+        $acq_db_name = "cf_acquisition_history";
+        $gainloss_db_name = "cf_gainloss_ledger";
+        $coinlist_db_name = "cf_coin_list";        
+
+        $coin_data = $this->db->get($coinlist_db_name)->result_array();
+        foreach ($coin_data as $coin) {
+            $dis_data = $this->db->query("select * from " . $dis_db_name . " where user_id=" . $user_id . " AND client_id = " . $client_id . " AND disp_coincurr = '" . $coin['coin_short'] . "' ORDER BY Timestamp ASC")->result_array();
+            $acq_data = $this->db->query("select * from " . $acq_db_name . " where user_id=" . $user_id . " AND client_id = " . $client_id . " AND acq_coincurr = '" . $coin['coin_short'] . "' ORDER BY Timestamp ASC")->result_array();
             $data = array();
             $sold_batch_rem = 0;
 
@@ -751,50 +923,47 @@ class Reports_model extends CRM_Model
                 $data = array(
                         "user_id"       => $user_id,
                         "client_id"     => $client_id,
-                        "coincurr"      => $dis_data[$i]['disp_coincurr'],
-                        "sold_id"       => $dis_data[$i]['trade_action_id'],
-                        "sold_Timestamp"=> $dis_data[$i]['Timestamp'],
-                        "sold_amount"   => $dis_data[$i]['disp_amount'],
-                        "sold_value"    => $dis_data[$i]['disp_value'],
-                        "cost_amount"   => 0,
-                        "cost_value"    => 0,
-                        "cost_batch_rem"=> $dis_data[$i]['disp_amount'],
+                        "coincurr"      => $acq_data[$i]['acq_coincurr'],
+                        "cost_id"       => $acq_data[$i]['trade_action_id'],
+                        "cost_Timestamp"=> $acq_data[$i]['Timestamp'],
+                        "cost_amount"   => $acq_data[$i]['acq_amount'],
+                        "cost_value"    => $acq_data[$i]['acq_value'],
+                        "sold_amount"   => 0,
+                        "sold_value"    => 0,
+                        "cost_batch_rem"=> $acq_data[$i]['acq_amount'],
                         "cost_fee_value"=> 0,
                         "fee_batch_rem" => 0,
                         "held_for"      => '',
                         "gain_loss"     => 0,
                     );
-                $cost_ratio = 0;
-                $sold_ratio = $data['sold_value']/$data['sold_amount'];
+                $cost_ratio = $data['acq_value']/$data['acq_amount'];;
+                $sold_ratio = 0;
 
-                while ($i < count($dis_data) -1  && $j < count($acq_data)) {
+                while ($i < count($acq_data) - 1  && $j < count($dis_data)) {
 
                     if ($data['cost_batch_rem'] > 0){
-                        // if coin is exist then get cost records
-                        $data['cost_id'] = $acq_data[$j]['trade_action_id'];
-                        $data['cost_amount'] = $acq_data[$j]['acq_amount'];
-                        $data['cost_value'] = $acq_data[$j]['acq_value'];
-                        $data['cost_Timestamp'] = $acq_data[$j]['Timestamp'];
-                        $data['cost_fee_value'] = $acq_data[$j]['fee_homecurr'];
-                        $cost_ratio = $acq_data[$j]['acq_value']/$acq_data[$j]['acq_amount'];
-                        $cost_batch_rem  = $data['cost_batch_rem'] - $data['cost_amount'];
+                        $data['sold_id'] = $dis_data[$j]['trade_action_id'];
+                        $data['sold_amount'] = $dis_data[$j]['disp_amount'];
+                        $data['sold_value'] = $dis_data[$j]['disp_value'];
+                        $data['sold_Timestamp'] = $dis_data['Timestamp'];                        
+                        $cost_batch_rem  = $data['cost_batch_rem'] - $data['sold_amount'];
+                        $sold_ratio = $dis_data[$j]['disp_value']/$dis_data[$j]['disp_amount'];
                         $j = $j + 1;
-                    }else{
-                        // if coin doesnot exist then get sold records
+                    }else{                        
                         $i = $i + 1;
-                        $data['sold_id'] = $dis_data[$i]['trade_action_id'];
-                        $data['sold_amount'] = $dis_data[$i]['disp_amount'];
-                        $data['sold_value'] = $dis_data[$i]['disp_value'];
-                        $data['sold_Timestamp'] = $dis_data[$i]['Timestamp'];
-                        $data['cost_fee_value'] = 0;
+                        $data['cost_id'] = $acq_data[$i]['trade_action_id'];
+                        $data['cost_amount'] = $acq_data[$i]['acq_amount'];
+                        $data['cost_value'] = $acq_data[$i]['acq_value'];
+                        $data['cost_Timestamp'] = $acq_data[$i]['Timestamp'];
+                        $data['cost_fee_value'] = $acq_data[$i]['fee_homecurr'];
                         // add cost_amount to cost_batch_rem
                         $cost_batch_rem  = $data['cost_batch_rem'] + $data['cost_amount'];
-                        $sold_ratio = $dis_data[$i]['disp_value']/$dis_data[$i]['disp_amount'];
+                        $cost_ratio = $acq_data[$i]['acq_value']/$acq_data[$i]['acq_amount'];
                     }
                     
                     // set sold_amount and cost_amount the same
                     $data['cost_batch_rem'] = $cost_batch_rem;
-                    if ($cost_batch_rem > 0){
+                    if ($cost_batch_rem <= 0){
                         $data['sold_amount'] = $data['cost_amount'];
                         $data['sold_value'] = $sold_ratio * $data['sold_amount'];
                     }else{
@@ -802,7 +971,7 @@ class Reports_model extends CRM_Model
                         $data['cost_value'] = $cost_ratio * $data['cost_amount'];
                     }
                     // get gain_loss
-                    $data['gain_loss']  = $data['sold_value'] - $data['cost_value'];
+                    $data['gain_loss']  = $data['cost_value'] - $data['sold_value'];
                     // get differece from two timestamps
                     $held_for = date_diff(date_create($data['sold_Timestamp']), date_create($data['cost_Timestamp']));
                     $data['held_for'] = $held_for->days . "days, " . $held_for->h . "h";
@@ -811,4 +980,4 @@ class Reports_model extends CRM_Model
             }
         }        
     }
-}
+*/
